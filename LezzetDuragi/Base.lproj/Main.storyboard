@@ -17,8 +17,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rs3-Nh-NfY">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profil" translatesAutoresizingMaskIntoConstraints="NO" id="3TA-N8-BCj">
+                                        <rect key="frame" x="314" y="50" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="O7s-nV-Mrn"/>
+                                            <constraint firstAttribute="height" constant="80" id="ox3-G5-Mhc"/>
+                                        </constraints>
+                                    </imageView>
+                                    <searchBar contentMode="redraw" placeholder="Bugün ne yemek istersin?" translatesAutoresizingMaskIntoConstraints="NO" id="cLn-Is-3iH">
+                                        <rect key="frame" x="0.0" y="149" width="414" height="51"/>
+                                        <color key="barTintColor" red="1" green="0.99997597930000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Merhaba Erdi!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="axA-xL-ISh">
+                                        <rect key="frame" x="29" y="59" width="235" height="17.5"/>
+                                        <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="15"/>
+                                        <color key="textColor" systemColor="systemOrangeColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KZf-TI-ERe">
+                                        <rect key="frame" x="20" y="98.5" width="189" height="31"/>
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="chevron.down" catalog="system" imagePlacement="trailing">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="İstanbul -Caddebostan-    ">
+                                                    <attributes>
+                                                        <font key="NSFont" size="12" name="Helvetica-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="KZf-TI-ERe" firstAttribute="leading" secondItem="axA-xL-ISh" secondAttribute="leading" constant="-9" id="12y-pO-Of6"/>
+                                    <constraint firstAttribute="trailing" secondItem="3TA-N8-BCj" secondAttribute="trailing" constant="20" id="1en-fk-ekn"/>
+                                    <constraint firstItem="3TA-N8-BCj" firstAttribute="leading" secondItem="axA-xL-ISh" secondAttribute="trailing" constant="50" id="84C-ZZ-eEn"/>
+                                    <constraint firstAttribute="trailing" secondItem="cLn-Is-3iH" secondAttribute="trailing" id="8Yz-Xh-duA"/>
+                                    <constraint firstItem="axA-xL-ISh" firstAttribute="top" secondItem="Rs3-Nh-NfY" secondAttribute="top" constant="59" id="8oj-Qa-ghq"/>
+                                    <constraint firstAttribute="bottom" secondItem="cLn-Is-3iH" secondAttribute="bottom" id="Cus-t4-dxy"/>
+                                    <constraint firstItem="axA-xL-ISh" firstAttribute="leading" secondItem="Rs3-Nh-NfY" secondAttribute="leading" constant="29" id="I0B-x9-MtY"/>
+                                    <constraint firstItem="3TA-N8-BCj" firstAttribute="top" secondItem="Rs3-Nh-NfY" secondAttribute="top" constant="50" id="Idu-TI-14Z"/>
+                                    <constraint firstAttribute="height" constant="200" id="WUi-iw-lLc"/>
+                                    <constraint firstItem="KZf-TI-ERe" firstAttribute="top" secondItem="axA-xL-ISh" secondAttribute="bottom" constant="22" id="euA-eS-rLY"/>
+                                    <constraint firstItem="cLn-Is-3iH" firstAttribute="leading" secondItem="Rs3-Nh-NfY" secondAttribute="leading" id="rih-pP-KHj"/>
+                                </constraints>
+                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="J4i-kD-92x">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="200" width="414" height="613"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aCZ-Gy-ljg">
                                     <size key="itemSize" width="124" height="202"/>
@@ -94,21 +145,27 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="J4i-kD-92x" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="BD4-XW-v0c"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="J4i-kD-92x" secondAttribute="bottom" id="LX5-7f-NmM"/>
-                            <constraint firstItem="J4i-kD-92x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="f6w-oB-5CK"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="J4i-kD-92x" secondAttribute="trailing" id="yvG-78-Wo8"/>
+                            <constraint firstItem="J4i-kD-92x" firstAttribute="top" secondItem="Rs3-Nh-NfY" secondAttribute="bottom" id="7iM-d4-q6H"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="J4i-kD-92x" secondAttribute="bottom" id="JCP-z4-jKd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="J4i-kD-92x" secondAttribute="trailing" id="ckU-ub-qds"/>
+                            <constraint firstItem="Rs3-Nh-NfY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="n1X-qA-4bg"/>
+                            <constraint firstItem="Rs3-Nh-NfY" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="oTQ-e9-gyC"/>
+                            <constraint firstItem="Rs3-Nh-NfY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ucQ-x2-6TM"/>
+                            <constraint firstItem="J4i-kD-92x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zff-UT-OeW"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Yemekler" image="menu" id="QpT-I9-RLR"/>
                     <navigationItem key="navigationItem" title="Lezzet Durağı" id="jLZ-3p-9Wi"/>
                     <connections>
                         <outlet property="collectionView" destination="J4i-kD-92x" id="YCT-8Y-IxG"/>
+                        <outlet property="profileImageView" destination="3TA-N8-BCj" id="Uqz-y6-ugr"/>
+                        <outlet property="searchBar" destination="cLn-Is-3iH" id="q1E-Eg-08H"/>
                         <segue destination="Q6h-Pk-x6f" kind="presentation" identifier="toDetay" modalPresentationStyle="fullScreen" id="d46-EM-0ej"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1685.5072463768117" y="97.767857142857139"/>
+            <point key="canvasLocation" x="928.98550724637687" y="114.50892857142857"/>
         </scene>
         <!--Detay View Controller-->
         <scene sceneID="IWg-zM-21s">
@@ -445,7 +502,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xin-nn-5dF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2528.985507246377" y="97.767857142857139"/>
+            <point key="canvasLocation" x="1809" y="115"/>
         </scene>
         <!--Sepetim-->
         <scene sceneID="dGM-5O-HM5">
@@ -657,16 +714,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="rMC-WO-QIo">
-                                                    <rect key="frame" x="16" y="539" width="382" height="129"/>
+                                                    <rect key="frame" x="16" y="575" width="382" height="93"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quick Delivery At Your Doorstep" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4vR-20-3t8">
-                                                            <rect key="frame" x="0.0" y="0.0" width="382" height="72"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lezzetli Yemekler" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4vR-20-3t8">
+                                                            <rect key="frame" x="0.0" y="0.0" width="382" height="36"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home delivery and online reservation system for restrounts and cafes" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7J-JK-bZN">
-                                                            <rect key="frame" x="0.0" y="88" width="382" height="41"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bütün dünya mutfaklarından en lezzetli yemekler senin için bekliyor." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7J-JK-bZN">
+                                                            <rect key="frame" x="0.0" y="52" width="382" height="41"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -684,7 +741,7 @@
                                                     </constraints>
                                                 </stackView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YM1-Vs-ib7">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="538"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="574"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -746,42 +803,25 @@
                         <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="GRq-DY-dUU" kind="relationship" relationship="viewControllers" id="T3g-bB-QzX"/>
-                        <segue destination="ZAV-I2-vmb" kind="relationship" relationship="viewControllers" id="bJ7-go-YUC"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="7Tt-aV-KSg"/>
+                        <segue destination="ZAV-I2-vmb" kind="relationship" relationship="viewControllers" id="LNL-JC-roU"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iSA-E5-HG2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="155" y="497"/>
         </scene>
-        <!--Yemekler-->
-        <scene sceneID="0Rr-Zp-zn2">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GRq-DY-dUU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Yemekler" image="menu" id="bNC-21-ydy"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="cjG-fZ-Epi">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="MFT-gn-goY"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ggf-3n-0Mn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="928.98550724637687" y="97.767857142857139"/>
-        </scene>
     </scenes>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="106"/>
+        <image name="chevron.down" catalog="system" width="128" height="72"/>
         <image name="hamburger" width="290" height="174"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="menu" width="24" height="24"/>
         <image name="minus" catalog="system" width="128" height="24"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="profil" width="362" height="358"/>
         <image name="restorant" width="80" height="80"/>
         <image name="shopping" width="24" height="24"/>
         <image name="star" catalog="system" width="128" height="116"/>
@@ -803,6 +843,9 @@
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

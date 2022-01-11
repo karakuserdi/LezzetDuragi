@@ -13,11 +13,14 @@ class AnasayfaViewController: UIViewController{
     
     //MARK: - Properties
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var yemeklerListesi = [Yemekler]()
     var arananYemeklerListesi = [Yemekler]()
     var anasayfaPresenterNesnesi:ViewToPresenterAnasayfaProtocol?
-    let searchController = UISearchController()
+    
+//    let searchController = UISearchController()
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -40,8 +43,15 @@ class AnasayfaViewController: UIViewController{
 
     //MARK: - Helpers
     func configureCollectionViewUI(){
-        searchController.searchResultsUpdater = self
-        self.navigationItem.searchController = searchController
+        //sarchbar
+        searchBar.delegate = self
+        searchBar.barTintColor = UIColor.white
+        searchBar.setBackgroundImage(UIImage.init(), for: UIBarPosition.any, barMetrics: UIBarMetrics.default)
+        
+        //profileImage
+        profileImageView.layer.borderWidth = 2
+        profileImageView.layer.borderColor = UIColor.orange.cgColor
+        profileImageView.layer.cornerRadius = 40
         
         //collectionView
         collectionView.delegate = self
@@ -107,10 +117,10 @@ extension AnasayfaViewController: UICollectionViewDelegate,UICollectionViewDataS
     }
 }
 
+
 //MARK: - UISearchResultsUpdating
-extension AnasayfaViewController: UISearchResultsUpdating{
-    func updateSearchResults(for searchController: UISearchController) {
-        guard let searchText = searchController.searchBar.text else {return}
+extension AnasayfaViewController: UISearchBarDelegate{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         arananYemeklerListesi = yemeklerListesi.filter({ yemek -> Bool in
           if searchText.isEmpty { return true }
             return yemek.yemek_adi!.lowercased().contains(searchText.lowercased())
