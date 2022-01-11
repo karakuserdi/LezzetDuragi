@@ -8,6 +8,10 @@
 import UIKit
 import Kingfisher
 
+protocol SepetimCellProtocol{
+    func stepperControl(value: Int, indexPath:IndexPath)
+}
+
 class SepetimCell: UITableViewCell {
     
     var yemek:SepetYemekler?{
@@ -16,11 +20,14 @@ class SepetimCell: UITableViewCell {
         }
     }
     
+    var delegate:SepetimCellProtocol?
+    var indexPath:IndexPath?
+    
     @IBOutlet weak var yemekView: UIView!
     @IBOutlet weak var yemekImageView: UIImageView!
     @IBOutlet weak var yemekAdLabel: UILabel!
     @IBOutlet weak var yemekFiyatLabel: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -47,7 +54,15 @@ class SepetimCell: UITableViewCell {
             }
         }
     }
-
+    
+    
+    @IBAction func eksiButtonPressed(_ sender: Any) {
+        delegate?.stepperControl(value: -1,indexPath: indexPath!)
+    }
+    @IBAction func artiButtonPressed(_ sender: Any) {
+        delegate?.stepperControl(value: 1,indexPath: indexPath!)
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

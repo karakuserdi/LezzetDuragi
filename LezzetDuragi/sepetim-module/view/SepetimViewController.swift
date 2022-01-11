@@ -7,17 +7,17 @@
 
 import UIKit
 
-class SepetimViewController: UIViewController {
+class SepetimViewController: UIViewController{
     
     //MARK: - Properties
     var sepetimPresenterNesnesi:ViewToPresenterSepetimProtocol?
     var sepetYemekler = [SepetYemekler]()
+    var urunSayisi = [Int]()
     var sepetTutari:Int = 0
     var idArray:[Int] = [Int]()
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sepetTutarLabel: UILabel!
-    
     @IBOutlet weak var bgView: UIView!
     
     
@@ -64,6 +64,7 @@ extension SepetimViewController:PresenterToViewSepetimProtocol{
         if !sepetim.isEmpty{
             sepetTutari = 0
             for sepetim in sepetim {
+                urunSayisi.append(Int(sepetim.yemek_siparis_adet!)!)
                 idArray.append(Int(sepetim.sepet_yemek_id!)!)
                 sepetTutari += Int(sepetim.yemek_fiyat!)!
                 sepetTutarLabel.text = "₺ \(sepetTutari)"
@@ -82,6 +83,21 @@ extension SepetimViewController:PresenterToViewSepetimProtocol{
     }
 }
 
+//MARK: - SepetimCellProtocol
+extension SepetimViewController:SepetimCellProtocol{
+    func stepperControl(value: Int, indexPath: IndexPath) {
+        if value == -1 && urunSayisi[indexPath.row] <= 1{
+            urunSayisi[indexPath.row] = 1
+        }else if value == 1 && urunSayisi[indexPath.row] >= 10 {
+            urunSayisi[indexPath.row] = 10
+        }else{
+            urunSayisi[indexPath.row] += value
+        }
+        
+        print("\(indexPath.row).row ürün sayisi \(urunSayisi[indexPath.row])")
+    }
+}
+
 //MARK: - UITableViewDelegate,UITableViewDataSource
 extension SepetimViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -91,7 +107,10 @@ extension SepetimViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "sepetimCell", for: indexPath) as! SepetimCell
         let yemek = sepetYemekler[indexPath.row]
+        
         cell.yemek = yemek
+        cell.delegate = self
+        cell.indexPath = indexPath
         return cell
     }
     
