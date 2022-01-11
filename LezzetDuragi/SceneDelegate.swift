@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import UserNotifications
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var izinKontrol:Bool = false
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -18,6 +20,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let winScane = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: winScane)
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound,.badge], completionHandler: { granted,error in
+            self.izinKontrol = granted
+            
+            if granted{
+                print("izin alma işlemi başarılı")
+            }else{
+                print("izin alma işlemi başarısız")
+            }
+        })
         
         //Onboarding ekranı veya tabbar
         let first = UserDefaults.standard.bool(forKey: "firstTime")

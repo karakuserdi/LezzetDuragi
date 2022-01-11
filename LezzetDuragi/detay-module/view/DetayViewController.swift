@@ -44,8 +44,8 @@ class DetayViewController: UIViewController {
         DetayRouter.createModule(ref: self)
         
         if let yemek = yemek {
-            yemekAdLabel.text = yemek.yemek_adi
-            yemekFiyatLabel.text = "₺ \(yemek.yemek_fiyat!)"
+            yemekAdLabel.text = "\(yemek.yemek_adi!) - ₺\(yemek.yemek_fiyat!)"
+            yemekFiyatLabel.text = "0"
             detayPresenterNesnesi?.al(yemek_id: Int(yemek.yemek_id!)!)
             
             if let url = URL(string: "http://kasimadalan.pe.hu/yemekler/resimler/\(yemek.yemek_resim_adi!)"){
@@ -99,14 +99,27 @@ class DetayViewController: UIViewController {
         }
         miktar -= 1
         miktarLabel.text = "\(miktar)"
+        
+        guard let yemek = yemek else {
+            return
+        }
+
+        yemekFiyatLabel.text = "\(miktar * Int((yemek.yemek_fiyat)!)!)"
     }
     
     @IBAction func artiButtonPressed(_ sender: Any) {
         if miktar >= 10 {
             return
         }
+        
         miktar += 1
         miktarLabel.text = "\(miktar)"
+        
+        guard let yemek = yemek else {
+            return
+        }
+
+        yemekFiyatLabel.text = "\(miktar * Int((yemek.yemek_fiyat)!)!)"
     }
     
     @IBAction func sepetEkleButtonPressed(_ sender: Any) {

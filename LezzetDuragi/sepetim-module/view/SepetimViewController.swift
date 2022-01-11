@@ -39,10 +39,14 @@ class SepetimViewController: UIViewController {
         sepetimPresenterNesnesi?.getir(kullanici_adi: AppDelegate().getUser()!)
     }
     
+    //MARK: - Actions
     @IBAction func siparisTamamlaButtonPressed(_ sender: Any) {
         sepetimPresenterNesnesi?.hepsiniSil(sepet_yemek_id: idArray, kullanici_adi: AppDelegate().getUser()!)
         UserDefaults.standard.set(0, forKey: "sepet")
-        print(UserDefaults.standard.integer(forKey: "sepet"))
+        
+        if sepetYemekler.count != 0{
+            performSegue(withIdentifier: "toSiparisDetay", sender: nil)
+        }
     }
 }
 

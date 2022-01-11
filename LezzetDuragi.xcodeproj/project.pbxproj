@@ -47,6 +47,13 @@
 		D46D1927278B554C008986BD /* SepetimInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46D1926278B554C008986BD /* SepetimInteractor.swift */; };
 		D46D1929278B5558008986BD /* SepetimPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46D1928278B5558008986BD /* SepetimPresenter.swift */; };
 		D46D192C278B976C008986BD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46D192B278B976C008986BD /* Extensions.swift */; };
+		D487AAC7278DEA1500FAADDA /* ProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D487AAC6278DEA1500FAADDA /* ProfilViewController.swift */; };
+		D487AACB278DEF1300FAADDA /* SiparisDetayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D487AACA278DEF1300FAADDA /* SiparisDetayViewController.swift */; };
+		D487AACE278DF64600FAADDA /* ProfilCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D487AACD278DF64600FAADDA /* ProfilCell.swift */; };
+		D487AAD4278DF8BE00FAADDA /* ProfilPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D487AAD3278DF8BE00FAADDA /* ProfilPresenter.swift */; };
+		D487AAD6278DF8C700FAADDA /* ProfilInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D487AAD5278DF8C700FAADDA /* ProfilInteractor.swift */; };
+		D487AAD8278DF8D300FAADDA /* ProfilRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D487AAD7278DF8D300FAADDA /* ProfilRouter.swift */; };
+		D487AADA278DF8DC00FAADDA /* ProfilProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D487AAD9278DF8DC00FAADDA /* ProfilProtocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +105,13 @@
 		D46D1926278B554C008986BD /* SepetimInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SepetimInteractor.swift; sourceTree = "<group>"; };
 		D46D1928278B5558008986BD /* SepetimPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SepetimPresenter.swift; sourceTree = "<group>"; };
 		D46D192B278B976C008986BD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		D487AAC6278DEA1500FAADDA /* ProfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilViewController.swift; sourceTree = "<group>"; };
+		D487AACA278DEF1300FAADDA /* SiparisDetayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiparisDetayViewController.swift; sourceTree = "<group>"; };
+		D487AACD278DF64600FAADDA /* ProfilCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilCell.swift; sourceTree = "<group>"; };
+		D487AAD3278DF8BE00FAADDA /* ProfilPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilPresenter.swift; sourceTree = "<group>"; };
+		D487AAD5278DF8C700FAADDA /* ProfilInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilInteractor.swift; sourceTree = "<group>"; };
+		D487AAD7278DF8D300FAADDA /* ProfilRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilRouter.swift; sourceTree = "<group>"; };
+		D487AAD9278DF8DC00FAADDA /* ProfilProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilProtocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +181,8 @@
 			isa = PBXGroup;
 			children = (
 				D46D192A278B975B008986BD /* helpers */,
+				D487AAC8278DEEF400FAADDA /* siparis-module */,
+				D487AAC4278DE3EB00FAADDA /* profile-module */,
 				D46D1917278B547F008986BD /* sepetim-module */,
 				D46D1907278B12F8008986BD /* detay-module */,
 				D46D18E7278AE85A008986BD /* anasayfa-module */,
@@ -391,6 +407,83 @@
 			path = helpers;
 			sourceTree = "<group>";
 		};
+		D487AAC4278DE3EB00FAADDA /* profile-module */ = {
+			isa = PBXGroup;
+			children = (
+				D487AAD2278DF8AA00FAADDA /* protocol */,
+				D487AAD1278DF8A400FAADDA /* router */,
+				D487AAD0278DF89C00FAADDA /* interactor */,
+				D487AACF278DF89600FAADDA /* presenter */,
+				D487AAC5278DE9FC00FAADDA /* view */,
+				D487AACC278DF61F00FAADDA /* cell */,
+			);
+			path = "profile-module";
+			sourceTree = "<group>";
+		};
+		D487AAC5278DE9FC00FAADDA /* view */ = {
+			isa = PBXGroup;
+			children = (
+				D487AAC6278DEA1500FAADDA /* ProfilViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		D487AAC8278DEEF400FAADDA /* siparis-module */ = {
+			isa = PBXGroup;
+			children = (
+				D487AAC9278DEF0600FAADDA /* view */,
+			);
+			path = "siparis-module";
+			sourceTree = "<group>";
+		};
+		D487AAC9278DEF0600FAADDA /* view */ = {
+			isa = PBXGroup;
+			children = (
+				D487AACA278DEF1300FAADDA /* SiparisDetayViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		D487AACC278DF61F00FAADDA /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				D487AACD278DF64600FAADDA /* ProfilCell.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		D487AACF278DF89600FAADDA /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D487AAD3278DF8BE00FAADDA /* ProfilPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		D487AAD0278DF89C00FAADDA /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D487AAD5278DF8C700FAADDA /* ProfilInteractor.swift */,
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		D487AAD1278DF8A400FAADDA /* router */ = {
+			isa = PBXGroup;
+			children = (
+				D487AAD7278DF8D300FAADDA /* ProfilRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		D487AAD2278DF8AA00FAADDA /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				D487AAD9278DF8DC00FAADDA /* ProfilProtocols.swift */,
+			);
+			path = protocol;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -481,7 +574,11 @@
 				D44CA388278D04AA00CDBDC5 /* FMDatabaseAdditions.m in Sources */,
 				D44CA389278D04AA00CDBDC5 /* FMResultSet.m in Sources */,
 				D44CA387278D04AA00CDBDC5 /* FMDatabaseQueue.m in Sources */,
+				D487AAD4278DF8BE00FAADDA /* ProfilPresenter.swift in Sources */,
+				D487AADA278DF8DC00FAADDA /* ProfilProtocols.swift in Sources */,
 				D44CA38D278D077100CDBDC5 /* YemeklerBegeni.swift in Sources */,
+				D487AAD8278DF8D300FAADDA /* ProfilRouter.swift in Sources */,
+				D487AAD6278DF8C700FAADDA /* ProfilInteractor.swift in Sources */,
 				D44CA372278C586500CDBDC5 /* OnboaringSlide.swift in Sources */,
 				D46D1900278B09AF008986BD /* AnasayfaProtocols.swift in Sources */,
 				D46D1929278B5558008986BD /* SepetimPresenter.swift in Sources */,
@@ -491,6 +588,7 @@
 				D46D18F4278AEFF9008986BD /* SepetYemeklerCevap.swift in Sources */,
 				D46D18CE278A68C4008986BD /* AppDelegate.swift in Sources */,
 				D46D1910278B3876008986BD /* DetayProtocols.swift in Sources */,
+				D487AAC7278DEA1500FAADDA /* ProfilViewController.swift in Sources */,
 				D44CA36F278C553C00CDBDC5 /* OnboardingViewController.swift in Sources */,
 				D46D18EB278AE8C6008986BD /* YemekCell.swift in Sources */,
 				D46D18E9278AE86B008986BD /* AnasayfaViewController.swift in Sources */,
@@ -506,6 +604,8 @@
 				D44CA385278D04AA00CDBDC5 /* FMDatabasePool.m in Sources */,
 				D46D1902278B0A8B008986BD /* AnasayfaInteractor.swift in Sources */,
 				D46D18F0278AEF02008986BD /* SepetYemekler.swift in Sources */,
+				D487AACB278DEF1300FAADDA /* SiparisDetayViewController.swift in Sources */,
+				D487AACE278DF64600FAADDA /* ProfilCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

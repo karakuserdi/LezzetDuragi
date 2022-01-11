@@ -15,9 +15,9 @@ class YemekCell: UICollectionViewCell {
         }
     }
     
+    
     @IBOutlet weak var imageContentView: UIView!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var fiyatLabel: UILabel!
     @IBOutlet weak var adLabel: UILabel!
     
     override init(frame: CGRect) {
@@ -35,7 +35,7 @@ class YemekCell: UICollectionViewCell {
     
     func configure(){
         if let yemek = yemek {
-            fiyatLabel.text = "₺ \(yemek.yemek_fiyat!)"
+            //fiyatLabel.text = "₺ \(yemek.yemek_fiyat!)"
             adLabel.text = yemek.yemek_adi
             
             if let url = URL(string: "http://kasimadalan.pe.hu/yemekler/resimler/\(yemek.yemek_resim_adi!)"){
@@ -44,10 +44,6 @@ class YemekCell: UICollectionViewCell {
                 }
             }
         }
-    }
-    @IBAction func likeButtonPressed(_ sender: Any) {
-        
-        
     }
     
     required init?(coder: NSCoder) {

@@ -68,7 +68,6 @@ class SepetimInteractor:PresenterToInteractorSepetimProtocol{
     
     func sepetinHepsiniSil(sepet_yemek_id:[Int],kullanici_adi: String) {
         for ids in sepet_yemek_id {
-            print(ids)
             let params:Parameters = ["sepet_yemek_id":ids,"kullanici_adi":kullanici_adi]
 
             AF.request("http://kasimadalan.pe.hu/yemekler/sepettenYemekSil.php",method: .post, parameters: params).response { response in

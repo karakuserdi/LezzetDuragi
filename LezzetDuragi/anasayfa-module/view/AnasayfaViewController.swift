@@ -37,7 +37,6 @@ class AnasayfaViewController: UIViewController{
                 tabItem.badgeValue = "\(UserDefaults.standard.integer(forKey: "sepet"))"
             }
         }
-        
         anasayfaPresenterNesnesi?.getir()
     }
 
@@ -65,7 +64,7 @@ class AnasayfaViewController: UIViewController{
         let genislik = collectionView.frame.size.width
         let boyut = (genislik - 45) / 3
         
-        layout.itemSize = CGSize(width: boyut, height: boyut * 1.2)
+        layout.itemSize = CGSize(width: boyut, height: boyut)
         
         collectionView.collectionViewLayout = layout
     }
@@ -84,15 +83,15 @@ extension AnasayfaViewController: UICollectionViewDelegate,UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if !arananYemeklerListesi.isEmpty{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "yemekCell", for: indexPath) as! YemekCell
-            
             let yemek = arananYemeklerListesi[indexPath.row]
             cell.yemek = yemek
+            
             return cell
         }else{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "yemekCell", for: indexPath) as! YemekCell
-            
             let yemek = yemeklerListesi[indexPath.row]
             cell.yemek = yemek
+            
             return cell
         }
     }
