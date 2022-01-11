@@ -59,13 +59,13 @@ class AnasayfaViewController: UIViewController{
         
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        layout.minimumLineSpacing = 5
-        layout.minimumInteritemSpacing = 5
+        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 10
         
         let genislik = collectionView.frame.size.width
-        let boyut = (genislik - 30) / 3
+        let boyut = (genislik - 45) / 3
         
-        layout.itemSize = CGSize(width: boyut, height: boyut * 1.5)
+        layout.itemSize = CGSize(width: boyut, height: boyut * 1.2)
         
         collectionView.collectionViewLayout = layout
     }

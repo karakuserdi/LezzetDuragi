@@ -25,8 +25,6 @@ class DetayViewController: UIViewController {
     @IBOutlet weak var likeButton: UIButton!
     //Button view
     @IBOutlet weak var miktarView: UIView!
-    @IBOutlet weak var eksiButtonView: UIView!
-    @IBOutlet weak var artiButtonView: UIView!
     //Button
     @IBOutlet weak var eksiButton: UIButton!
     @IBOutlet weak var artiButton: UIButton!
@@ -67,16 +65,14 @@ class DetayViewController: UIViewController {
         
         miktarView.layer.cornerRadius = 26
         
-        eksiButtonView.layer.cornerRadius = 25
-        eksiButtonView.layer.borderColor = UIColor.lightGray.cgColor
-        eksiButtonView.layer.borderWidth = 0.1
+        eksiButton.layer.cornerRadius = 25
+        eksiButton.layer.borderColor = UIColor.white.cgColor
+        eksiButton.layer.borderWidth = 3
         
-        artiButtonView.layer.cornerRadius = 25
-        artiButtonView.layer.borderColor = UIColor.lightGray.cgColor
-        artiButtonView.layer.borderWidth = 0.1
+        artiButton.layer.cornerRadius = 25
+        artiButton.layer.borderColor = UIColor.white.cgColor
+        artiButton.layer.borderWidth = 3
         
-        eksiButton.layer.cornerRadius = 20
-        artiButton.layer.cornerRadius = 20
         
         puanView.layer.cornerRadius = 5
         

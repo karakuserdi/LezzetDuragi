@@ -25,9 +25,12 @@ class YemekCell: UICollectionViewCell {
     }
     
     override func awakeFromNib() {
-        imageContentView.layer.borderColor = UIColor.purple.cgColor
-        imageContentView.layer.borderWidth = 0.3
-        imageContentView.layer.cornerRadius = 5
+        imageContentView.layer.cornerRadius = 10
+        imageContentView.layer.shadowColor = UIColor.black.cgColor
+        imageContentView.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+        imageContentView.layer.shadowRadius = 2
+        imageContentView.layer.shadowOpacity = 0.3
+        imageContentView.layer.masksToBounds = false
     }
     
     func configure(){
@@ -40,8 +43,9 @@ class YemekCell: UICollectionViewCell {
                     self.imageView.kf.setImage(with: url)
                 }
             }
-            
         }
+    }
+    @IBAction func likeButtonPressed(_ sender: Any) {
         
         
     }
