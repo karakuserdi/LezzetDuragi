@@ -41,11 +41,18 @@ class SepetimViewController: UIViewController {
     
     //MARK: - Actions
     @IBAction func siparisTamamlaButtonPressed(_ sender: Any) {
-        sepetimPresenterNesnesi?.hepsiniSil(sepet_yemek_id: idArray, kullanici_adi: AppDelegate().getUser()!)
-        UserDefaults.standard.set(0, forKey: "sepet")
-        
         if sepetYemekler.count != 0{
+            sepetimPresenterNesnesi?.hepsiniSil(sepet_yemek_id: idArray, kullanici_adi: AppDelegate().getUser()!)
+            UserDefaults.standard.set(0, forKey: "sepet")
             performSegue(withIdentifier: "toSiparisDetay", sender: nil)
+            
+            var sayi = UserDefaults.standard.integer(forKey: "siparisSayi")
+            sayi = sayi + 1
+            UserDefaults.standard.set(sayi, forKey: "siparisSayi")
+            
+            var harcama = UserDefaults.standard.integer(forKey: "harcama")
+            harcama = harcama + sepetTutari
+            UserDefaults.standard.set(harcama, forKey: "harcama")
         }
     }
 }

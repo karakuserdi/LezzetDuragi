@@ -19,6 +19,17 @@ class ProfilInteractor:PresenterToInteractorProfilProtocol{
 
         db = FMDatabase(path: veritabaniURL.path)
     }
+    
+    func yemekBegenildiMi(yemek_id: Int, yemek_isLiked: String) {
+        db?.open()
+        do {
+            try db!.executeUpdate("UPDATE yemekler SET yemek_isLiked = ? WHERE yemek_id = ?", values: [yemek_isLiked,yemek_id])
+            yemekAl()
+        } catch {
+            print(error.localizedDescription)
+        }
+        db?.close()
+    }
  
     func yemekAl() {
         var liste = [YemeklerBegeni]()

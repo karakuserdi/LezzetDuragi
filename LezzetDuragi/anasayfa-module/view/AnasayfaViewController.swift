@@ -20,8 +20,6 @@ class AnasayfaViewController: UIViewController{
     var arananYemeklerListesi = [Yemekler]()
     var anasayfaPresenterNesnesi:ViewToPresenterAnasayfaProtocol?
     
-//    let searchController = UISearchController()
-    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()

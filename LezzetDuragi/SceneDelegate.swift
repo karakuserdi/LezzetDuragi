@@ -36,7 +36,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if first{
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "tabbarVC") as! UITabBarController
-            //let vc = storyboard.instantiateViewController(withIdentifier: "detay") as! DetayViewController
             window?.rootViewController = vc
             window?.makeKeyAndVisible()
         }else{

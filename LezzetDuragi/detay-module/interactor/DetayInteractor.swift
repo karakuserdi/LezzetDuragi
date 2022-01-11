@@ -71,9 +71,7 @@ class DetayInteractor:PresenterToInteractorDetayProtocol{
                                 var sayi = UserDefaults.standard.integer(forKey: "sepet")
                                 sayi = sayi + 1
                                 UserDefaults.standard.set(sayi, forKey: "sepet")
-                                print("Detay Interactor: \(UserDefaults.standard.integer(forKey: "sepet"))")
                             }
-                            
                         }
                     }
                 } catch {

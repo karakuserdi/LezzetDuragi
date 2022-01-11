@@ -14,6 +14,10 @@ class ProfilPresenter:ViewToPresenterProfilProtocol{
     func al() {
         profilInteractor?.yemekAl()
     }
+    
+    func begenildiMi(yemek_id: Int, yemek_isLiked: String) {
+        profilInteractor?.yemekBegenildiMi(yemek_id: yemek_id, yemek_isLiked: yemek_isLiked)
+    }
 }
 
 extension ProfilPresenter:InteractorToPresenterProfilProtocol{

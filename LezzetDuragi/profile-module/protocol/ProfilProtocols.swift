@@ -11,6 +11,7 @@ protocol PresenterToInteractorProfilProtocol{
     var profilPresenter:InteractorToPresenterProfilProtocol? {get set}
     
     func yemekAl()
+    func yemekBegenildiMi(yemek_id: Int, yemek_isLiked: String)
 }
 
 protocol ViewToPresenterProfilProtocol{
@@ -18,6 +19,7 @@ protocol ViewToPresenterProfilProtocol{
     var profilView:PresenterToViewProfilProtocol? {get set}
     
     func al()
+    func begenildiMi(yemek_id: Int, yemek_isLiked: String)
 }
 
 protocol InteractorToPresenterProfilProtocol{

@@ -27,6 +27,7 @@ class ProfilViewController: UIViewController {
         
         ProfilRouter.createModule(ref: self)
         profilPresenterNesnesi?.al()
+        toplamSiparisLabel.text = "Toplam sipariş sayısı: \(UserDefaults.standard.integer(forKey: "siparisSayi"))\nToplam harcamanız: \(UserDefaults.standard.integer(forKey: "harcama")) ₺"
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
@@ -64,6 +65,29 @@ extension ProfilViewController:UITableViewDelegate,UITableViewDataSource{
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let sil = UIContextualAction(style: .destructive, title: "sil"){ [self] contextualAction,view,bool in
+            let yemek = self.yemekler[indexPath.row]
+            profilPresenterNesnesi?.begenildiMi(yemek_id: Int(yemek.yemek_id!)!, yemek_isLiked: "false")
+        }
+        
+        return UISwipeActionsConfiguration(actions: [sil])
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.text = "Henüz bir favori eklemedeniz."
+        label.textColor = .orange
+        return label
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return yemekler.count == 0 ? 50 : 0
+    }
+    
+    
     
     
 }
