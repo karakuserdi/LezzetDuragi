@@ -6,16 +6,12 @@
 //
 
 import UIKit
-import Lottie
 
 class SiparisDetayViewController: UIViewController {
-    
-    @IBOutlet weak var animationView: AnimationView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        lottieAnimation()
         
         let content = UNMutableNotificationContent()
         content.title = "Lezzet Durağı"
@@ -31,17 +27,5 @@ class SiparisDetayViewController: UIViewController {
         UNUserNotificationCenter.current().add(bildirim, withCompletionHandler: nil)
     }
     
-    func lottieAnimation(){
-        let animationView = AnimationView(name: "ok-done-complete")
-        animationView.frame = CGRect(x: 0, y: 00, width: 200, height: 200)
-        
-        animationView.center = self.view.center
-        animationView.contentMode = .scaleAspectFit
-        
-        view.addSubview(animationView)
-        animationView.play()
-        animationView.loopMode = .playOnce
-        
-    }
     
 }

@@ -644,7 +644,7 @@
                 <navigationController id="ZAV-I2-vmb" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Sepetim" image="shopping" badgeValue="0" id="KEZ-og-xzf"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="cIl-Ju-WWb">
-                        <rect key="frame" x="0.0" y="44" width="414" height="104"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -707,7 +707,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="T6x-5U-W1Z">
-                                <rect key="frame" x="0.0" y="148" width="414" height="515"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="523"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="sepetimCell" rowHeight="100" id="DuQ-vH-6Hg" customClass="SepetimCell" customModule="LezzetDuragi" customModuleProvider="target">
@@ -839,28 +839,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eap-Bj-YFb">
-                                <rect key="frame" x="50" y="342" width="314" height="330"/>
+                                <rect key="frame" x="50" y="308" width="314" height="330"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Siparişiniz bize ulaştı teşekkür ederiz." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4h-2J-uaG">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Siparişiniz bize ulaştı teşekkür ederiz." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4h-2J-uaG">
                                         <rect key="frame" x="50" y="263.5" width="214" height="50.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                         <color key="textColor" systemColor="systemGrayColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dge-gF-NA1" customClass="AnimationView" customModule="Lottie">
-                                        <rect key="frame" x="0.0" y="0.0" width="314" height="216"/>
-                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                    </view>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="onay" translatesAutoresizingMaskIntoConstraints="NO" id="qmf-JD-oMD">
+                                        <rect key="frame" x="40" y="40" width="234" height="163.5"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="Z4h-2J-uaG" secondAttribute="bottom" constant="16" id="0cY-7V-fko"/>
-                                    <constraint firstItem="dge-gF-NA1" firstAttribute="top" secondItem="eap-Bj-YFb" secondAttribute="top" id="CLn-6B-UMX"/>
+                                    <constraint firstItem="qmf-JD-oMD" firstAttribute="leading" secondItem="eap-Bj-YFb" secondAttribute="leading" constant="40" id="QH7-gd-zrd"/>
                                     <constraint firstAttribute="trailing" secondItem="Z4h-2J-uaG" secondAttribute="trailing" constant="50" id="Tf5-yt-ASd"/>
-                                    <constraint firstAttribute="trailing" secondItem="dge-gF-NA1" secondAttribute="trailing" id="ZG4-kG-gWF"/>
                                     <constraint firstItem="Z4h-2J-uaG" firstAttribute="leading" secondItem="eap-Bj-YFb" secondAttribute="leading" constant="50" id="ae1-1X-LJX"/>
-                                    <constraint firstItem="Z4h-2J-uaG" firstAttribute="top" secondItem="dge-gF-NA1" secondAttribute="bottom" constant="47.5" id="gOo-8a-ANh"/>
-                                    <constraint firstItem="dge-gF-NA1" firstAttribute="leading" secondItem="eap-Bj-YFb" secondAttribute="leading" id="pXN-cy-12w"/>
+                                    <constraint firstItem="Z4h-2J-uaG" firstAttribute="top" secondItem="qmf-JD-oMD" secondAttribute="bottom" constant="60" id="jch-7Z-WZd"/>
+                                    <constraint firstAttribute="trailing" secondItem="qmf-JD-oMD" secondAttribute="trailing" constant="40" id="rdj-SK-mjE"/>
+                                    <constraint firstItem="qmf-JD-oMD" firstAttribute="top" secondItem="eap-Bj-YFb" secondAttribute="top" constant="40" id="vMg-mc-JdA"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -869,7 +868,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lezzet Durağı" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vdv-wc-D9i">
-                                <rect key="frame" x="50" y="292" width="314" height="42"/>
+                                <rect key="frame" x="50" y="258" width="314" height="42"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                 <color key="textColor" systemColor="systemOrangeColor"/>
                                 <nil key="highlightedColor"/>
@@ -880,18 +879,15 @@
                         <constraints>
                             <constraint firstItem="eap-Bj-YFb" firstAttribute="centerX" secondItem="0kV-mE-MOG" secondAttribute="centerX" id="CSS-Yn-8Hk"/>
                             <constraint firstItem="epO-Ta-aur" firstAttribute="trailing" secondItem="eap-Bj-YFb" secondAttribute="trailing" constant="50" id="Dg5-0p-jK1"/>
-                            <constraint firstItem="epO-Ta-aur" firstAttribute="bottom" secondItem="eap-Bj-YFb" secondAttribute="bottom" constant="141" id="FSa-cM-AkE"/>
+                            <constraint firstItem="epO-Ta-aur" firstAttribute="bottom" secondItem="eap-Bj-YFb" secondAttribute="bottom" constant="175" id="FSa-cM-AkE"/>
                             <constraint firstItem="eap-Bj-YFb" firstAttribute="leading" secondItem="epO-Ta-aur" secondAttribute="leading" constant="50" id="Lcp-Rj-MZY"/>
                             <constraint firstItem="eap-Bj-YFb" firstAttribute="top" secondItem="Vdv-wc-D9i" secondAttribute="bottom" constant="8" id="ODD-Re-gCS"/>
                             <constraint firstItem="epO-Ta-aur" firstAttribute="trailing" secondItem="Vdv-wc-D9i" secondAttribute="trailing" constant="50" id="Z6R-OW-gTf"/>
                             <constraint firstItem="Vdv-wc-D9i" firstAttribute="leading" secondItem="epO-Ta-aur" secondAttribute="leading" constant="50" id="n3r-Ab-nXF"/>
-                            <constraint firstItem="eap-Bj-YFb" firstAttribute="centerY" secondItem="0kV-mE-MOG" secondAttribute="centerY" constant="59" id="zWd-7q-lin"/>
+                            <constraint firstItem="eap-Bj-YFb" firstAttribute="centerY" secondItem="0kV-mE-MOG" secondAttribute="centerY" constant="25" id="zWd-7q-lin"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Siparişiniz Detay" id="mLG-YS-Ej5"/>
-                    <connections>
-                        <outlet property="animationView" destination="dge-gF-NA1" id="UEx-Zy-oUk"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uLe-IU-nXJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1056,6 +1052,7 @@
         <image name="lineweight" catalog="system" width="128" height="110"/>
         <image name="menu" width="24" height="24"/>
         <image name="minus" catalog="system" width="128" height="24"/>
+        <image name="onay" width="512" height="512"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="profil" width="362" height="358"/>
         <image name="restorant" width="80" height="80"/>
