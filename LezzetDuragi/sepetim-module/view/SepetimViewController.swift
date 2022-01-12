@@ -8,7 +8,6 @@
 import UIKit
 
 class SepetimViewController: UIViewController{
-    
     //MARK: - Properties
     var sepetimPresenterNesnesi:ViewToPresenterSepetimProtocol?
     var sepetYemekler = [SepetYemekler]()
@@ -16,15 +15,15 @@ class SepetimViewController: UIViewController{
     var sepetTutari:Int = 0
     var idArray:[Int] = [Int]()
     
+    var timer = Timer()
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sepetTutarLabel: UILabel!
     @IBOutlet weak var bgView: UIView!
     
-    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
@@ -61,6 +60,7 @@ class SepetimViewController: UIViewController{
 extension SepetimViewController:PresenterToViewSepetimProtocol{
     func viewaVeriGonder(sepetim: Array<SepetYemekler>) {
         self.sepetYemekler = sepetim
+        
         if !sepetim.isEmpty{
             sepetTutari = 0
             for sepetim in sepetim {
@@ -76,25 +76,54 @@ extension SepetimViewController:PresenterToViewSepetimProtocol{
         if let tabItems = tabBarController?.tabBar.items {
             let tabItem = tabItems[1]
             DispatchQueue.main.async {
-                self.tableView.reloadData()
                 tabItem.badgeValue = "\(self.sepetYemekler.count)"
             }
+        }
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
         }
     }
 }
 
-//MARK: - SepetimCellProtocol
+
+//MARK: - SepetimCellProtocol //ürün adet güncelleme
 extension SepetimViewController:SepetimCellProtocol{
     func stepperControl(value: Int, indexPath: IndexPath) {
-        if value == -1 && urunSayisi[indexPath.row] <= 1{
-            urunSayisi[indexPath.row] = 1
-        }else if value == 1 && urunSayisi[indexPath.row] >= 10 {
-            urunSayisi[indexPath.row] = 10
-        }else{
-            urunSayisi[indexPath.row] += value
-        }
+        let yemek = sepetYemekler[indexPath.row]
+        var yenilendi = yemek
+        var taneFiyat = 0
         
-        print("\(indexPath.row).row ürün sayisi \(urunSayisi[indexPath.row])")
+        self.sepetimPresenterNesnesi?.sil(sepet_yemek_id: Int(yemek.sepet_yemek_id!)!, kullanici_adi: AppDelegate().getUser()!)
+
+        sepetYemekler.remove(at: indexPath.row)
+        tableView.beginUpdates()
+        tableView.deleteRows(at: [IndexPath(row: indexPath.row, section: 0)], with: .none)
+        tableView.endUpdates()
+
+        let fiyat = Int(yenilendi.yemek_fiyat!)
+        let adet = Int(yenilendi.yemek_siparis_adet!)
+        if let fiyat = fiyat,let adet = adet{
+            taneFiyat = fiyat / adet
+        }
+
+        if value == -1 && self.urunSayisi[indexPath.row] <= 1{
+            self.urunSayisi[indexPath.row] = 1
+        }else if value == 1 && self.urunSayisi[indexPath.row] >= 10 {
+            self.urunSayisi[indexPath.row] = 10
+        }else{
+            self.urunSayisi[indexPath.row] += value
+        }
+
+        //Ekleme işlemi
+
+        self.sepetimPresenterNesnesi?.ekle(yemek_adi: yenilendi.yemek_adi!, yemek_resim_adi: yenilendi.yemek_resim_adi!, yemek_fiyat: taneFiyat * urunSayisi[indexPath.row], yemek_siparis_adet: self.urunSayisi[indexPath.row], kullanici_adi: AppDelegate().getUser()!)
+
+        timer = Timer.scheduledTimer(withTimeInterval: 0.25, repeats: false) { timer in
+            self.urunSayisi = []
+            taneFiyat = 0
+            yenilendi = SepetYemekler()
+            self.sepetimPresenterNesnesi?.getir(kullanici_adi: AppDelegate().getUser()!)
+        }
     }
 }
 
@@ -126,6 +155,9 @@ extension SepetimViewController:UITableViewDelegate,UITableViewDataSource{
             
             let evetAction = UIAlertAction(title: "Evet", style: .destructive){ action in
                 self.sepetimPresenterNesnesi?.sil(sepet_yemek_id: Int(yemek.sepet_yemek_id!)!, kullanici_adi: AppDelegate().getUser()!)
+                self.timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { timer in
+                    self.sepetimPresenterNesnesi?.getir(kullanici_adi: AppDelegate().getUser()!)
+                }
             }
             alert.addAction(evetAction)
             self.present(alert, animated: true)
@@ -145,7 +177,15 @@ extension SepetimViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return sepetYemekler.count == 0 ? 150 : 0
+        var height:CGFloat = 0
+        timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { timer in
+            if self.sepetYemekler.count == 0{
+                return height = 0
+            }else{
+                return height = 100
+            }
+        }
+        return height
     }
 }
 

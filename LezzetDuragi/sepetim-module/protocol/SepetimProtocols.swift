@@ -11,6 +11,7 @@ protocol PresenterToInteractorSepetimProtocol{
     var sepetimPresenter:InteractorToPresenterSepetimProtocol? {get set}
     
     func tumSepetiGetir(kullanici_adi:String)
+    func sepeteYemekEkle(yemek_adi: String, yemek_resim_adi: String, yemek_fiyat: Int, yemek_siparis_adet: Int, kullanici_adi: String)
     func sepettenYemekSil(sepet_yemek_id:Int,kullanici_adi:String)
     func sepetinHepsiniSil(sepet_yemek_id:[Int],kullanici_adi:String)
 }
@@ -20,6 +21,7 @@ protocol ViewToPresenterSepetimProtocol{
     var sepetimView:PresenterToViewSepetimProtocol? {get set}
     
     func getir(kullanici_adi:String)
+    func ekle(yemek_adi: String, yemek_resim_adi: String, yemek_fiyat: Int, yemek_siparis_adet: Int, kullanici_adi: String)
     func sil(sepet_yemek_id:Int,kullanici_adi:String)
     func hepsiniSil(sepet_yemek_id:[Int],kullanici_adi:String)
 }
