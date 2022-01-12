@@ -841,13 +841,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eap-Bj-YFb">
                                 <rect key="frame" x="50" y="308" width="314" height="330"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Siparişiniz bize ulaştı teşekkür ederiz." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4h-2J-uaG">
-                                        <rect key="frame" x="50" y="263.5" width="214" height="50.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Siparişiniz bize ulaştı teşekkür ederiz." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4h-2J-uaG">
+                                        <rect key="frame" x="50" y="263.5" width="210.5" height="50.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                         <color key="textColor" systemColor="systemGrayColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="onay" translatesAutoresizingMaskIntoConstraints="NO" id="qmf-JD-oMD">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="onay" translatesAutoresizingMaskIntoConstraints="NO" id="qmf-JD-oMD">
                                         <rect key="frame" x="40" y="40" width="234" height="163.5"/>
                                     </imageView>
                                 </subviews>
@@ -855,7 +855,7 @@
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="Z4h-2J-uaG" secondAttribute="bottom" constant="16" id="0cY-7V-fko"/>
                                     <constraint firstItem="qmf-JD-oMD" firstAttribute="leading" secondItem="eap-Bj-YFb" secondAttribute="leading" constant="40" id="QH7-gd-zrd"/>
-                                    <constraint firstAttribute="trailing" secondItem="Z4h-2J-uaG" secondAttribute="trailing" constant="50" id="Tf5-yt-ASd"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Z4h-2J-uaG" secondAttribute="trailing" id="Tf5-yt-ASd"/>
                                     <constraint firstItem="Z4h-2J-uaG" firstAttribute="leading" secondItem="eap-Bj-YFb" secondAttribute="leading" constant="50" id="ae1-1X-LJX"/>
                                     <constraint firstItem="Z4h-2J-uaG" firstAttribute="top" secondItem="qmf-JD-oMD" secondAttribute="bottom" constant="60" id="jch-7Z-WZd"/>
                                     <constraint firstAttribute="trailing" secondItem="qmf-JD-oMD" secondAttribute="trailing" constant="40" id="rdj-SK-mjE"/>
