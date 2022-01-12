@@ -792,6 +792,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="artiButton" destination="vtG-D4-6Rp" id="qZg-H1-bHZ"/>
+                                            <outlet property="eksiButton" destination="scl-TM-S60" id="UQI-fp-7ld"/>
                                             <outlet property="yemekAdLabel" destination="jZI-oM-a29" id="7kC-nu-KS8"/>
                                             <outlet property="yemekFiyatLabel" destination="vPW-TB-Be1" id="Emo-y7-BYp"/>
                                             <outlet property="yemekImageView" destination="ldG-7g-cwZ" id="Phk-P7-Rgm"/>

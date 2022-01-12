@@ -124,6 +124,11 @@ extension SepetimViewController:SepetimCellProtocol{
             yenilendi = SepetYemekler()
             self.sepetimPresenterNesnesi?.getir(kullanici_adi: AppDelegate().getUser()!)
         }
+        tableView.isUserInteractionEnabled = false
+
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { timer in
+            self.tableView.isUserInteractionEnabled = true
+        }
     }
 }
 
@@ -140,6 +145,7 @@ extension SepetimViewController:UITableViewDelegate,UITableViewDataSource{
         cell.yemek = yemek
         cell.delegate = self
         cell.indexPath = indexPath
+        
         return cell
     }
     

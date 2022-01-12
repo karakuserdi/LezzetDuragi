@@ -27,6 +27,9 @@ class SepetimCell: UITableViewCell {
     @IBOutlet weak var yemekImageView: UIImageView!
     @IBOutlet weak var yemekAdLabel: UILabel!
     @IBOutlet weak var yemekFiyatLabel: UILabel!
+    
+    @IBOutlet weak var eksiButton: UIButton!
+    @IBOutlet weak var artiButton: UIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()
