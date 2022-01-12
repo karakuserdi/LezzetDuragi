@@ -95,10 +95,10 @@ extension SepetimViewController:SepetimCellProtocol{
         
         self.sepetimPresenterNesnesi?.sil(sepet_yemek_id: Int(yemek.sepet_yemek_id!)!, kullanici_adi: AppDelegate().getUser()!)
 
-        sepetYemekler.remove(at: indexPath.row)
-        tableView.beginUpdates()
-        tableView.deleteRows(at: [IndexPath(row: indexPath.row, section: 0)], with: .none)
-        tableView.endUpdates()
+        //sepetYemekler.remove(at: indexPath.row)
+        //tableView.beginUpdates()
+        //tableView.reloadRows(at: [IndexPath(row: indexPath.row, section: 0)], with: .none)
+        //tableView.endUpdates()
 
         let fiyat = Int(yenilendi.yemek_fiyat!)
         let adet = Int(yenilendi.yemek_siparis_adet!)
@@ -115,9 +115,8 @@ extension SepetimViewController:SepetimCellProtocol{
         }
 
         //Ekleme işlemi
-
         self.sepetimPresenterNesnesi?.ekle(yemek_adi: yenilendi.yemek_adi!, yemek_resim_adi: yenilendi.yemek_resim_adi!, yemek_fiyat: taneFiyat * urunSayisi[indexPath.row], yemek_siparis_adet: self.urunSayisi[indexPath.row], kullanici_adi: AppDelegate().getUser()!)
-
+        
         timer = Timer.scheduledTimer(withTimeInterval: 0.25, repeats: false) { timer in
             self.urunSayisi = []
             taneFiyat = 0
