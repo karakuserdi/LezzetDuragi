@@ -62,18 +62,17 @@ extension SepetimViewController:PresenterToViewSepetimProtocol{
         self.sepetYemekler = sepetim
         
         if !sepetim.isEmpty{
-            sepetTutari = 0
+            self.sepetTutari = 0
             for sepetim in sepetim {
-                urunSayisi.append(Int(sepetim.yemek_siparis_adet!)!)
-                idArray.append(Int(sepetim.sepet_yemek_id!)!)
-                sepetTutari += Int(sepetim.yemek_fiyat!)!
-                sepetTutarLabel.text = "₺ \(sepetTutari)"
+                self.urunSayisi.append(Int(sepetim.yemek_siparis_adet!)!)
+                self.idArray.append(Int(sepetim.sepet_yemek_id!)!)
+                self.sepetTutari += Int(sepetim.yemek_fiyat!)!
+                self.sepetTutarLabel.text = "₺ \(self.sepetTutari)"
             }
         }else{
-            sepetTutarLabel.text = "₺ 0"
+            self.sepetTutarLabel.text = "₺ 0"
         }
-        
-        if let tabItems = tabBarController?.tabBar.items {
+            if let tabItems = self.tabBarController?.tabBar.items {
             let tabItem = tabItems[1]
             DispatchQueue.main.async {
                 tabItem.badgeValue = "\(self.sepetYemekler.count)"
@@ -94,7 +93,7 @@ extension SepetimViewController:SepetimCellProtocol{
         var taneFiyat = 0
         
         self.sepetimPresenterNesnesi?.sil(sepet_yemek_id: Int(yemek.sepet_yemek_id!)!, kullanici_adi: AppDelegate().getUser()!)
-
+        
         //sepetYemekler.remove(at: indexPath.row)
         //tableView.beginUpdates()
         //tableView.reloadRows(at: [IndexPath(row: indexPath.row, section: 0)], with: .none)
@@ -182,15 +181,7 @@ extension SepetimViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        var height:CGFloat = 0
-        timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { timer in
-            if self.sepetYemekler.count == 0{
-                return height = 0
-            }else{
-                return height = 100
-            }
-        }
-        return height
+        return sepetYemekler.count == 0 ? 150 : 0
     }
 }
 

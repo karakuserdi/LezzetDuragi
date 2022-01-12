@@ -104,7 +104,7 @@ class DetayViewController: UIViewController {
             return
         }
 
-        yemekFiyatLabel.text = "\(miktar * Int((yemek.yemek_fiyat)!)!)"
+        yemekFiyatLabel.text = "₺ \(miktar * Int((yemek.yemek_fiyat)!)!)"
     }
     
     @IBAction func artiButtonPressed(_ sender: Any) {
@@ -119,7 +119,7 @@ class DetayViewController: UIViewController {
             return
         }
 
-        yemekFiyatLabel.text = "\(miktar * Int((yemek.yemek_fiyat)!)!)"
+        yemekFiyatLabel.text = "₺ \(miktar * Int((yemek.yemek_fiyat)!)!)"
     }
     
     @IBAction func sepetEkleButtonPressed(_ sender: Any) {

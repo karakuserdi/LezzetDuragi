@@ -90,7 +90,7 @@ class SepetimInteractor:PresenterToInteractorSepetimProtocol{
                             sayi = sayi - 1
                         }
                         UserDefaults.standard.set(sayi, forKey: "sepet")
-                        //self.tumSepetiGetir(kullanici_adi: kullanici_adi)
+                        self.tumSepetiGetir(kullanici_adi: kullanici_adi)
                     }
                 } catch {
                     print(error.localizedDescription)
