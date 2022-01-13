@@ -20,6 +20,7 @@ class DetayViewController: UIViewController {
     @IBOutlet weak var sepetEkleButton: UIButton!
     
     var isLike = "false"
+    var timer = Timer()
     
     //like button
     @IBOutlet weak var likeButton: UIButton!
@@ -123,14 +124,7 @@ class DetayViewController: UIViewController {
     }
     
     @IBAction func sepetEkleButtonPressed(_ sender: Any) {
-        if miktar == 0{
-            alertTimer(title: nil, mesaj: "Lütfen ürün adet seçiniz!")
-            return
-        }
-        if let yemek = yemek {
-            alertTimer(title: nil, mesaj: "\(miktar) adet \(yemek.yemek_adi!) \n sepetinize eklendi.")
-            detayPresenterNesnesi?.ekle(yemek_adi: yemek.yemek_adi!, yemek_resim_adi: yemek.yemek_resim_adi!, yemek_fiyat: miktar*Int(yemek.yemek_fiyat!)!, yemek_siparis_adet: Int(miktar), kullanici_adi: AppDelegate().getUser()!)
-        }
+        detayPresenterNesnesi?.sepetYemekAl(kullanici_adi: AppDelegate().getUser()!,yemek_ad: (yemek?.yemek_adi!)!)
     }
 }
 
@@ -142,6 +136,41 @@ extension DetayViewController:PresenterToViewDetayProtocol{
             likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
         }else{
             likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        }
+    }
+    
+    func viewaYemekGonder(sepetYemek:SepetYemekler) {
+        if miktar == 0{
+            alertTimer(title: nil, mesaj: "Lütfen ürün adet seçiniz!")
+            return
+        }
+        
+        if sepetYemek.yemek_adi != nil{
+            let yemekSayisi = Int(sepetYemek.yemek_siparis_adet!)! + miktar
+            if yemekSayisi > 10{
+                alertTimer(title: nil, mesaj: "Eklediğiniz ürün 10'dan fazla olamaz!")
+                return
+            }
+            
+            detayPresenterNesnesi?.yemekSil(sepet_yemek_id: Int(sepetYemek.sepet_yemek_id!)!, kullanici_adi: AppDelegate().getUser()!)
+            
+            if let yemek = yemek{
+                let yemekFiyat = Int(sepetYemek.yemek_fiyat!)! + miktar*Int(yemek.yemek_fiyat!)!
+    
+                timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { [self] timer in
+                    alertTimer(title: nil, mesaj: "\(miktar) adet \(yemek.yemek_adi!) \n sepetinize eklendi.")
+                    detayPresenterNesnesi?.ekle(yemek_adi: yemek.yemek_adi!, yemek_resim_adi: yemek.yemek_resim_adi!, yemek_fiyat: yemekFiyat, yemek_siparis_adet: yemekSayisi,kullanici_adi:AppDelegate().getUser()!)
+                }
+            }
+        }else{
+            if let yemek = yemek {
+                alertTimer(title: nil, mesaj: "\(miktar) adet \(yemek.yemek_adi!) \n sepetinize eklendi.")
+                detayPresenterNesnesi?.ekle(yemek_adi: yemek.yemek_adi!, yemek_resim_adi: yemek.yemek_resim_adi!, yemek_fiyat: miktar*Int(yemek.yemek_fiyat!)!, yemek_siparis_adet: Int(miktar),kullanici_adi:AppDelegate().getUser()!)
+                //sepet sayi işlemleri
+                var sayi = UserDefaults.standard.integer(forKey: "sepet")
+                sayi = sayi + 1
+                UserDefaults.standard.set(sayi, forKey: "sepet")
+            }
         }
     }
 }

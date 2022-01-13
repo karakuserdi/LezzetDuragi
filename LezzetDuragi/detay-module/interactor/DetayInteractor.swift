@@ -20,6 +20,51 @@ class DetayInteractor:PresenterToInteractorDetayProtocol{
         db = FMDatabase(path: veritabaniURL.path)
     }
     
+    func sepettenYemekSil(sepet_yemek_id: Int, kullanici_adi: String) {
+        let params:Parameters = ["sepet_yemek_id":sepet_yemek_id,"kullanici_adi":kullanici_adi]
+        
+        AF.request("http://kasimadalan.pe.hu/yemekler/sepettenYemekSil.php",method: .post, parameters: params).response { response in
+            if let data = response.data{
+                
+                do {
+                    if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any] {
+                        print(json)
+                        
+                    }
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
+    
+    func sepetYemekleriAl(kullanici_adi: String,yemek_ad:String) {
+        let params:Parameters = ["kullanici_adi":kullanici_adi]
+        var sepetYemek = SepetYemekler()
+        AF.request("http://kasimadalan.pe.hu/yemekler/sepettekiYemekleriGetir.php",method: .post,parameters: params).response { response in
+            
+            if let data = response.data {
+                    do {
+                        let cevap = try JSONDecoder().decode(SepetYemeklerCevap.self, from: data)
+                        
+                        if let gelenListe = cevap.sepet_yemekler{
+                            for i in gelenListe{
+                                if i.yemek_adi == yemek_ad{
+                                    sepetYemek = i
+                                    break
+                                }
+                            }
+                        }
+                        
+                        self.detayPresenter?.presentaraYemekGonder(sepetYemek: sepetYemek)
+                    } catch {
+                        self.detayPresenter?.presentaraYemekGonder(sepetYemek: SepetYemekler())
+                        print(error.localizedDescription)
+                    }
+            }
+        }
+    }
+    
     func yemekAl(yemek_id: Int){
         var begeni:String?
         
@@ -65,14 +110,15 @@ class DetayInteractor:PresenterToInteractorDetayProtocol{
 
                 do {
                     if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any] {
-                        if let success = json["success"] as? Int{
-                            if success == 1{
-                                //sepet sayi işlemleri
-                                var sayi = UserDefaults.standard.integer(forKey: "sepet")
-                                sayi = sayi + 1
-                                UserDefaults.standard.set(sayi, forKey: "sepet")
-                            }
-                        }
+                        print(json)
+//                        if let success = json["success"] as? Int{
+//                            if success == 1{
+//                                //sepet sayi işlemleri
+//                                var sayi = UserDefaults.standard.integer(forKey: "sepet")
+//                                sayi = sayi + 1
+//                                UserDefaults.standard.set(sayi, forKey: "sepet")
+//                            }
+//                        }
                     }
                 } catch {
                     print(error.localizedDescription)
