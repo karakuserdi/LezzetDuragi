@@ -35,6 +35,7 @@ class SepetimViewController: UIViewController{
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        urunSayisi = [Int]()
         sepetimPresenterNesnesi?.getir(kullanici_adi: AppDelegate().getUser()!)
     }
     
@@ -60,6 +61,12 @@ class SepetimViewController: UIViewController{
 extension SepetimViewController:PresenterToViewSepetimProtocol{
     func viewaVeriGonder(sepetim: Array<SepetYemekler>) {
         self.sepetYemekler = sepetim
+        
+        print("****************")
+        for i in sepetYemekler{
+            print("Ürün adet gelen veri: \(i.yemek_siparis_adet!)")
+        }
+        
         
         if !sepetim.isEmpty{
             self.sepetTutari = 0
@@ -89,6 +96,7 @@ extension SepetimViewController:PresenterToViewSepetimProtocol{
 extension SepetimViewController:SepetimCellProtocol{
     func stepperControl(value: Int, indexPath: IndexPath) {
         let yemek = sepetYemekler[indexPath.row]
+        print("Ürün adet güncelleme: \(yemek.yemek_siparis_adet!)")
         var yenilendi = yemek
         var taneFiyat = 0
         
