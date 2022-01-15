@@ -36,6 +36,10 @@ class SepetimViewController: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         urunSayisi = [Int]()
+        let kartlar = Kisilerdao().kartAl(kisi_id: UserDefaults.standard.integer(forKey: "currentUserId"))
+        for k in kartlar{
+            print(k.kart_isim!)
+        }
         sepetimPresenterNesnesi?.getir(kullanici_adi: AppDelegate().getUser()!)
     }
     
@@ -61,12 +65,6 @@ class SepetimViewController: UIViewController{
 extension SepetimViewController:PresenterToViewSepetimProtocol{
     func viewaVeriGonder(sepetim: Array<SepetYemekler>) {
         self.sepetYemekler = sepetim
-        
-        print("****************")
-        for i in sepetYemekler{
-            print("Ürün adet gelen veri: \(i.yemek_siparis_adet!)")
-        }
-        
         
         if !sepetim.isEmpty{
             self.sepetTutari = 0
@@ -96,33 +94,33 @@ extension SepetimViewController:PresenterToViewSepetimProtocol{
 extension SepetimViewController:SepetimCellProtocol{
     func stepperControl(value: Int, indexPath: IndexPath) {
         let yemek = sepetYemekler[indexPath.row]
-        print("Ürün adet güncelleme: \(yemek.yemek_siparis_adet!)")
         var yenilendi = yemek
         var taneFiyat = 0
+        var trash = false
         
         self.sepetimPresenterNesnesi?.sil(sepet_yemek_id: Int(yemek.sepet_yemek_id!)!, kullanici_adi: AppDelegate().getUser()!)
-        
-        //sepetYemekler.remove(at: indexPath.row)
-        //tableView.beginUpdates()
-        //tableView.reloadRows(at: [IndexPath(row: indexPath.row, section: 0)], with: .none)
-        //tableView.endUpdates()
 
         let fiyat = Int(yenilendi.yemek_fiyat!)
         let adet = Int(yenilendi.yemek_siparis_adet!)
         if let fiyat = fiyat,let adet = adet{
             taneFiyat = fiyat / adet
         }
+        
+          if value == -1 && self.urunSayisi[indexPath.row] <= 1{
+              trash = true
+              self.sepetimPresenterNesnesi?.sil(sepet_yemek_id: Int(yemek.sepet_yemek_id!)!, kullanici_adi: AppDelegate().getUser()!)
+          }else if value == 1 && self.urunSayisi[indexPath.row] >= 10 {
+              self.urunSayisi[indexPath.row] = 10
+          }else{
+              self.urunSayisi[indexPath.row] += value
+          }
 
-        if value == -1 && self.urunSayisi[indexPath.row] <= 1{
-            self.urunSayisi[indexPath.row] = 1
-        }else if value == 1 && self.urunSayisi[indexPath.row] >= 10 {
-            self.urunSayisi[indexPath.row] = 10
-        }else{
-            self.urunSayisi[indexPath.row] += value
-        }
-
+        
         //Ekleme işlemi
-        self.sepetimPresenterNesnesi?.ekle(yemek_adi: yenilendi.yemek_adi!, yemek_resim_adi: yenilendi.yemek_resim_adi!, yemek_fiyat: taneFiyat * urunSayisi[indexPath.row], yemek_siparis_adet: self.urunSayisi[indexPath.row], kullanici_adi: AppDelegate().getUser()!)
+        if !trash{
+            self.sepetimPresenterNesnesi?.ekle(yemek_adi: yenilendi.yemek_adi!, yemek_resim_adi: yenilendi.yemek_resim_adi!, yemek_fiyat: taneFiyat * urunSayisi[indexPath.row], yemek_siparis_adet: self.urunSayisi[indexPath.row], kullanici_adi: AppDelegate().getUser()!)
+        }
+        trash = false
         
         timer = Timer.scheduledTimer(withTimeInterval: 0.25, repeats: false) { timer in
             self.urunSayisi = []
@@ -152,6 +150,12 @@ extension SepetimViewController:UITableViewDelegate,UITableViewDataSource{
         cell.delegate = self
         cell.indexPath = indexPath
         
+        if yemek.yemek_siparis_adet! == "1"{
+            cell.eksiButton.setImage(UIImage(systemName: "trash"), for: .normal)
+        }else{
+            cell.eksiButton.setImage(UIImage(systemName: "minus"), for: .normal)
+        }
+
         return cell
     }
     

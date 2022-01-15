@@ -57,7 +57,7 @@ class OnboardingViewController: UIViewController {
     @IBAction func nextButtonPressed(_ sender: Any) {
         if currentPage == slides.count - 1{
             UserDefaults.standard.set(true, forKey: "firstTime")
-            let controller = storyboard?.instantiateViewController(withIdentifier: "tabbarVC") as! UITabBarController
+            let controller = storyboard?.instantiateViewController(withIdentifier: "loginVC") as! LoginViewController
             controller.modalPresentationStyle = .fullScreen
             controller.modalTransitionStyle = .flipHorizontal
             present(controller, animated: true, completion: nil)

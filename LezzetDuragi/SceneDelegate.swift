@@ -31,20 +31,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             }
         })
         
+        //**********************************************************************************************************************
         //Onboarding ekranı veya tabbar
+        let login = UserDefaults.standard.bool(forKey: "login")
         let first = UserDefaults.standard.bool(forKey: "firstTime")
+        
         if first{
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "tabbarVC") as! UITabBarController
-            window?.rootViewController = vc
-            window?.makeKeyAndVisible()
+            if login{
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "tabbarVC") as! UITabBarController
+                window?.rootViewController = vc
+                window?.makeKeyAndVisible()
+            }else{
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "loginVC") as! LoginViewController
+                window?.rootViewController = vc
+                window?.makeKeyAndVisible()
+            }
         }else{
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "onboardingVC") as! OnboardingViewController
             window?.rootViewController = vc
             window?.makeKeyAndVisible()
         }
-        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

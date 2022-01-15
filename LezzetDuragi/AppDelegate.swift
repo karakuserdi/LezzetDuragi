@@ -12,7 +12,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func getUser() -> String?{
         let user = UserDefaults.standard
-        user.set("riza_erdi_karakus", forKey: "currentUser")
         return user.string(forKey: "currentUser")
     }
     

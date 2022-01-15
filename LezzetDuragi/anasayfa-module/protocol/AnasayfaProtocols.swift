@@ -24,7 +24,6 @@ protocol InteractorToPresenterAnasayfaProtocol {
     func presenteraVeriGonder(yemeklerListesi:Array<Yemekler>)
 }
 
-//Taşıyıcı Protocol
 protocol PresenterToViewAnasayfaProtocol {
     func vieweVeriGonder(yemeklerListesi:Array<Yemekler>)
 }

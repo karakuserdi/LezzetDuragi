@@ -7,11 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D43C68502792D08E0045E27F /* AdreslerimProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43C684F2792D08E0045E27F /* AdreslerimProtocols.swift */; };
+		D43C68532792D0A30045E27F /* AdreslerimRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43C68522792D0A30045E27F /* AdreslerimRouter.swift */; };
+		D43C68552792D0B10045E27F /* AdreslerimInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43C68542792D0B10045E27F /* AdreslerimInteractor.swift */; };
+		D43C68572792D0C00045E27F /* AdreslerimPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43C68562792D0C00045E27F /* AdreslerimPresenter.swift */; };
+		D43C685D2792D9600045E27F /* AdresEkleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43C685C2792D9600045E27F /* AdresEkleProtocols.swift */; };
+		D43C685F2792DA130045E27F /* AdresEkleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43C685E2792DA130045E27F /* AdresEkleInteractor.swift */; };
+		D43C68612792DA720045E27F /* AdresEklePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43C68602792DA720045E27F /* AdresEklePresenter.swift */; };
+		D43C68632792DAC00045E27F /* AdresEkleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43C68622792DAC00045E27F /* AdresEkleRouter.swift */; };
+		D43C68692792DC230045E27F /* AdresGuncelleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43C68682792DC230045E27F /* AdresGuncelleProtocols.swift */; };
+		D43C686B2792DC2D0045E27F /* AdresGuncelleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43C686A2792DC2D0045E27F /* AdresGuncelleRouter.swift */; };
+		D43C686D2792DC390045E27F /* AdresGuncelleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43C686C2792DC390045E27F /* AdresGuncelleInteractor.swift */; };
+		D43C686F2792DC420045E27F /* AdresGuncellePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43C686E2792DC420045E27F /* AdresGuncellePresenter.swift */; };
+		D43C68782792E3450045E27F /* OdemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43C68772792E3450045E27F /* OdemeViewController.swift */; };
+		D43C687A2792E3C30045E27F /* OdemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43C68792792E3C30045E27F /* OdemeCell.swift */; };
+		D43C687C2792E6570045E27F /* yemekler.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = D43C687B2792E6570045E27F /* yemekler.sqlite */; };
+		D43C687E2792E6D70045E27F /* OdemeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43C687D2792E6D70045E27F /* OdemeProtocols.swift */; };
+		D43C68802792E7500045E27F /* OdemePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43C687F2792E7500045E27F /* OdemePresenter.swift */; };
+		D43C68822792E79B0045E27F /* OdemeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43C68812792E79B0045E27F /* OdemeInteractor.swift */; };
+		D43C68842792E8BA0045E27F /* OdemeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43C68832792E8BA0045E27F /* OdemeRouter.swift */; };
+		D43C688A2792ED960045E27F /* OdemeEkleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43C68892792ED960045E27F /* OdemeEkleViewController.swift */; };
+		D43C68902792F1A80045E27F /* OdemeEkleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43C688F2792F1A80045E27F /* OdemeEkleProtocols.swift */; };
+		D43C68922792F2400045E27F /* OdemeEkleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43C68912792F2400045E27F /* OdemeEkleRouter.swift */; };
+		D43C68942792F24D0045E27F /* OdemeEkleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43C68932792F24D0045E27F /* OdemeEkleInteractor.swift */; };
+		D43C68962792F25A0045E27F /* OdemeEklePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43C68952792F25A0045E27F /* OdemeEklePresenter.swift */; };
+		D43C689E2792F9F60045E27F /* OdemeGuncelleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43C689D2792F9F60045E27F /* OdemeGuncelleViewController.swift */; };
+		D43C68A02792FA100045E27F /* OdemeGuncelleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43C689F2792FA100045E27F /* OdemeGuncelleProtocols.swift */; };
+		D43C68A22792FA280045E27F /* OdemeGuncelleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43C68A12792FA280045E27F /* OdemeGuncelleRouter.swift */; };
+		D43C68A42792FA330045E27F /* OdemeGuncelleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43C68A32792FA330045E27F /* OdemeGuncelleInteractor.swift */; };
+		D43C68A62792FA3E0045E27F /* OdemeGuncellePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43C68A52792FA3E0045E27F /* OdemeGuncellePresenter.swift */; };
 		D44CA36C278C545C00CDBDC5 /* appIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D44CA36B278C545C00CDBDC5 /* appIcon.png */; };
 		D44CA36F278C553C00CDBDC5 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44CA36E278C553C00CDBDC5 /* OnboardingViewController.swift */; };
 		D44CA372278C586500CDBDC5 /* OnboaringSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44CA371278C586500CDBDC5 /* OnboaringSlide.swift */; };
 		D44CA374278CB26600CDBDC5 /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44CA373278CB26600CDBDC5 /* OnboardingCell.swift */; };
-		D44CA378278D047E00CDBDC5 /* yemekler.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = D44CA377278D047E00CDBDC5 /* yemekler.sqlite */; };
 		D44CA385278D04AA00CDBDC5 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = D44CA37A278D04A900CDBDC5 /* FMDatabasePool.m */; };
 		D44CA386278D04AA00CDBDC5 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = D44CA37D278D04A900CDBDC5 /* FMDatabase.m */; };
 		D44CA387278D04AA00CDBDC5 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D44CA37F278D04AA00CDBDC5 /* FMDatabaseQueue.m */; };
@@ -54,14 +82,54 @@
 		D487AAD6278DF8C700FAADDA /* ProfilInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D487AAD5278DF8C700FAADDA /* ProfilInteractor.swift */; };
 		D487AAD8278DF8D300FAADDA /* ProfilRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D487AAD7278DF8D300FAADDA /* ProfilRouter.swift */; };
 		D487AADA278DF8DC00FAADDA /* ProfilProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D487AAD9278DF8DC00FAADDA /* ProfilProtocols.swift */; };
+		D4F0F080279157530084E64F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F0F07F279157530084E64F /* LoginViewController.swift */; };
+		D4F0F0842791576E0084E64F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F0F0832791576E0084E64F /* RegisterViewController.swift */; };
+		D4F0F08627915CF00084E64F /* Kisi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F0F08527915CF00084E64F /* Kisi.swift */; };
+		D4F0F08827915EBF0084E64F /* Adres.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F0F08727915EBF0084E64F /* Adres.swift */; };
+		D4F0F08A27915F610084E64F /* Kart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F0F08927915F610084E64F /* Kart.swift */; };
+		D4F0F08C2791630A0084E64F /* Kisilerdao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F0F08B2791630A0084E64F /* Kisilerdao.swift */; };
+		D4F0F0902791855F0084E64F /* AdresEkleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F0F08F2791855F0084E64F /* AdresEkleViewController.swift */; };
+		D4F0F09427918F800084E64F /* AyarlarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F0F09327918F800084E64F /* AyarlarViewController.swift */; };
+		D4F0F097279192E60084E64F /* AyarlarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F0F096279192E60084E64F /* AyarlarCell.swift */; };
+		D4F0F09B2791E1B30084E64F /* AdreslerimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F0F09A2791E1B30084E64F /* AdreslerimViewController.swift */; };
+		D4F0F09F2791E4280084E64F /* AdreslerimCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F0F09E2791E4280084E64F /* AdreslerimCell.swift */; };
+		D4F0F0A7279227360084E64F /* AdresGuncelleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F0F0A6279227360084E64F /* AdresGuncelleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D43C684F2792D08E0045E27F /* AdreslerimProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdreslerimProtocols.swift; sourceTree = "<group>"; };
+		D43C68522792D0A30045E27F /* AdreslerimRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdreslerimRouter.swift; sourceTree = "<group>"; };
+		D43C68542792D0B10045E27F /* AdreslerimInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdreslerimInteractor.swift; sourceTree = "<group>"; };
+		D43C68562792D0C00045E27F /* AdreslerimPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdreslerimPresenter.swift; sourceTree = "<group>"; };
+		D43C685C2792D9600045E27F /* AdresEkleProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdresEkleProtocols.swift; sourceTree = "<group>"; };
+		D43C685E2792DA130045E27F /* AdresEkleInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdresEkleInteractor.swift; sourceTree = "<group>"; };
+		D43C68602792DA720045E27F /* AdresEklePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdresEklePresenter.swift; sourceTree = "<group>"; };
+		D43C68622792DAC00045E27F /* AdresEkleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdresEkleRouter.swift; sourceTree = "<group>"; };
+		D43C68682792DC230045E27F /* AdresGuncelleProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdresGuncelleProtocols.swift; sourceTree = "<group>"; };
+		D43C686A2792DC2D0045E27F /* AdresGuncelleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdresGuncelleRouter.swift; sourceTree = "<group>"; };
+		D43C686C2792DC390045E27F /* AdresGuncelleInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdresGuncelleInteractor.swift; sourceTree = "<group>"; };
+		D43C686E2792DC420045E27F /* AdresGuncellePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdresGuncellePresenter.swift; sourceTree = "<group>"; };
+		D43C68772792E3450045E27F /* OdemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdemeViewController.swift; sourceTree = "<group>"; };
+		D43C68792792E3C30045E27F /* OdemeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdemeCell.swift; sourceTree = "<group>"; };
+		D43C687B2792E6570045E27F /* yemekler.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = yemekler.sqlite; sourceTree = "<group>"; };
+		D43C687D2792E6D70045E27F /* OdemeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdemeProtocols.swift; sourceTree = "<group>"; };
+		D43C687F2792E7500045E27F /* OdemePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdemePresenter.swift; sourceTree = "<group>"; };
+		D43C68812792E79B0045E27F /* OdemeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdemeInteractor.swift; sourceTree = "<group>"; };
+		D43C68832792E8BA0045E27F /* OdemeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdemeRouter.swift; sourceTree = "<group>"; };
+		D43C68892792ED960045E27F /* OdemeEkleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdemeEkleViewController.swift; sourceTree = "<group>"; };
+		D43C688F2792F1A80045E27F /* OdemeEkleProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdemeEkleProtocols.swift; sourceTree = "<group>"; };
+		D43C68912792F2400045E27F /* OdemeEkleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdemeEkleRouter.swift; sourceTree = "<group>"; };
+		D43C68932792F24D0045E27F /* OdemeEkleInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdemeEkleInteractor.swift; sourceTree = "<group>"; };
+		D43C68952792F25A0045E27F /* OdemeEklePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdemeEklePresenter.swift; sourceTree = "<group>"; };
+		D43C689D2792F9F60045E27F /* OdemeGuncelleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdemeGuncelleViewController.swift; sourceTree = "<group>"; };
+		D43C689F2792FA100045E27F /* OdemeGuncelleProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdemeGuncelleProtocols.swift; sourceTree = "<group>"; };
+		D43C68A12792FA280045E27F /* OdemeGuncelleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdemeGuncelleRouter.swift; sourceTree = "<group>"; };
+		D43C68A32792FA330045E27F /* OdemeGuncelleInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdemeGuncelleInteractor.swift; sourceTree = "<group>"; };
+		D43C68A52792FA3E0045E27F /* OdemeGuncellePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdemeGuncellePresenter.swift; sourceTree = "<group>"; };
 		D44CA36B278C545C00CDBDC5 /* appIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appIcon.png; sourceTree = "<group>"; };
 		D44CA36E278C553C00CDBDC5 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		D44CA371278C586500CDBDC5 /* OnboaringSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboaringSlide.swift; sourceTree = "<group>"; };
 		D44CA373278CB26600CDBDC5 /* OnboardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
-		D44CA377278D047E00CDBDC5 /* yemekler.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = yemekler.sqlite; sourceTree = "<group>"; };
 		D44CA379278D04A800CDBDC5 /* LezzetDuragi-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LezzetDuragi-Bridging-Header.h"; sourceTree = "<group>"; };
 		D44CA37A278D04A900CDBDC5 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
 		D44CA37B278D04A900CDBDC5 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
@@ -112,6 +180,18 @@
 		D487AAD5278DF8C700FAADDA /* ProfilInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilInteractor.swift; sourceTree = "<group>"; };
 		D487AAD7278DF8D300FAADDA /* ProfilRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilRouter.swift; sourceTree = "<group>"; };
 		D487AAD9278DF8DC00FAADDA /* ProfilProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilProtocols.swift; sourceTree = "<group>"; };
+		D4F0F07F279157530084E64F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D4F0F0832791576E0084E64F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		D4F0F08527915CF00084E64F /* Kisi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kisi.swift; sourceTree = "<group>"; };
+		D4F0F08727915EBF0084E64F /* Adres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adres.swift; sourceTree = "<group>"; };
+		D4F0F08927915F610084E64F /* Kart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kart.swift; sourceTree = "<group>"; };
+		D4F0F08B2791630A0084E64F /* Kisilerdao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kisilerdao.swift; sourceTree = "<group>"; };
+		D4F0F08F2791855F0084E64F /* AdresEkleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdresEkleViewController.swift; sourceTree = "<group>"; };
+		D4F0F09327918F800084E64F /* AyarlarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AyarlarViewController.swift; sourceTree = "<group>"; };
+		D4F0F096279192E60084E64F /* AyarlarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AyarlarCell.swift; sourceTree = "<group>"; };
+		D4F0F09A2791E1B30084E64F /* AdreslerimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdreslerimViewController.swift; sourceTree = "<group>"; };
+		D4F0F09E2791E4280084E64F /* AdreslerimCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdreslerimCell.swift; sourceTree = "<group>"; };
+		D4F0F0A6279227360084E64F /* AdresGuncelleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdresGuncelleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +207,275 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D43C684B2792D0440045E27F /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D43C684F2792D08E0045E27F /* AdreslerimProtocols.swift */,
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
+		D43C684C2792D05A0045E27F /* router */ = {
+			isa = PBXGroup;
+			children = (
+				D43C68522792D0A30045E27F /* AdreslerimRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		D43C684D2792D0670045E27F /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D43C68542792D0B10045E27F /* AdreslerimInteractor.swift */,
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		D43C684E2792D0720045E27F /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D43C68562792D0C00045E27F /* AdreslerimPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		D43C68582792D81F0045E27F /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D43C685C2792D9600045E27F /* AdresEkleProtocols.swift */,
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
+		D43C68592792D82A0045E27F /* router */ = {
+			isa = PBXGroup;
+			children = (
+				D43C68622792DAC00045E27F /* AdresEkleRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		D43C685A2792D8300045E27F /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D43C685E2792DA130045E27F /* AdresEkleInteractor.swift */,
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		D43C685B2792D83B0045E27F /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D43C68602792DA720045E27F /* AdresEklePresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		D43C68642792DBDE0045E27F /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D43C68682792DC230045E27F /* AdresGuncelleProtocols.swift */,
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
+		D43C68652792DBE50045E27F /* router */ = {
+			isa = PBXGroup;
+			children = (
+				D43C686A2792DC2D0045E27F /* AdresGuncelleRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		D43C68662792DBEC0045E27F /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D43C686C2792DC390045E27F /* AdresGuncelleInteractor.swift */,
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		D43C68672792DBF50045E27F /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D43C686E2792DC420045E27F /* AdresGuncellePresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		D43C68702792E29C0045E27F /* odeme-module */ = {
+			isa = PBXGroup;
+			children = (
+				D43C68762792E2EA0045E27F /* presenter */,
+				D43C68752792E2E10045E27F /* interactor */,
+				D43C68742792E2DA0045E27F /* router */,
+				D43C68732792E2D30045E27F /* protocols */,
+				D43C68722792E2C00045E27F /* cell */,
+				D43C68712792E2B90045E27F /* view */,
+			);
+			path = "odeme-module";
+			sourceTree = "<group>";
+		};
+		D43C68712792E2B90045E27F /* view */ = {
+			isa = PBXGroup;
+			children = (
+				D43C68772792E3450045E27F /* OdemeViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		D43C68722792E2C00045E27F /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				D43C68792792E3C30045E27F /* OdemeCell.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		D43C68732792E2D30045E27F /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D43C687D2792E6D70045E27F /* OdemeProtocols.swift */,
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
+		D43C68742792E2DA0045E27F /* router */ = {
+			isa = PBXGroup;
+			children = (
+				D43C68832792E8BA0045E27F /* OdemeRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		D43C68752792E2E10045E27F /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D43C68812792E79B0045E27F /* OdemeInteractor.swift */,
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		D43C68762792E2EA0045E27F /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D43C687F2792E7500045E27F /* OdemePresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		D43C68852792EB1A0045E27F /* odeme-ekle-module */ = {
+			isa = PBXGroup;
+			children = (
+				D43C688E2792F1760045E27F /* presenter */,
+				D43C688D2792F16A0045E27F /* interactor */,
+				D43C688C2792F15C0045E27F /* router */,
+				D43C688B2792F14A0045E27F /* protocols */,
+				D43C68862792EB240045E27F /* view */,
+			);
+			path = "odeme-ekle-module";
+			sourceTree = "<group>";
+		};
+		D43C68862792EB240045E27F /* view */ = {
+			isa = PBXGroup;
+			children = (
+				D43C68892792ED960045E27F /* OdemeEkleViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		D43C688B2792F14A0045E27F /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D43C688F2792F1A80045E27F /* OdemeEkleProtocols.swift */,
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
+		D43C688C2792F15C0045E27F /* router */ = {
+			isa = PBXGroup;
+			children = (
+				D43C68912792F2400045E27F /* OdemeEkleRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		D43C688D2792F16A0045E27F /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D43C68932792F24D0045E27F /* OdemeEkleInteractor.swift */,
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		D43C688E2792F1760045E27F /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D43C68952792F25A0045E27F /* OdemeEklePresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		D43C68972792F9B10045E27F /* odeme-guncelle-module */ = {
+			isa = PBXGroup;
+			children = (
+				D43C689C2792F9DF0045E27F /* presenter */,
+				D43C689B2792F9D50045E27F /* interactor */,
+				D43C689A2792F9CD0045E27F /* router */,
+				D43C68992792F9C50045E27F /* protocols */,
+				D43C68982792F9BE0045E27F /* view */,
+			);
+			path = "odeme-guncelle-module";
+			sourceTree = "<group>";
+		};
+		D43C68982792F9BE0045E27F /* view */ = {
+			isa = PBXGroup;
+			children = (
+				D43C689D2792F9F60045E27F /* OdemeGuncelleViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		D43C68992792F9C50045E27F /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D43C689F2792FA100045E27F /* OdemeGuncelleProtocols.swift */,
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
+		D43C689A2792F9CD0045E27F /* router */ = {
+			isa = PBXGroup;
+			children = (
+				D43C68A12792FA280045E27F /* OdemeGuncelleRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		D43C689B2792F9D50045E27F /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D43C68A32792FA330045E27F /* OdemeGuncelleInteractor.swift */,
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		D43C689C2792F9DF0045E27F /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D43C68A52792FA3E0045E27F /* OdemeGuncellePresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		D43C68A727930C770045E27F /* api */ = {
+			isa = PBXGroup;
+			children = (
+				D4F0F08B2791630A0084E64F /* Kisilerdao.swift */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
 		D44CA36D278C550900CDBDC5 /* onboarding-module */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,7 +529,16 @@
 		D46D18CC278A68C4008986BD /* LezzetDuragi */ = {
 			isa = PBXGroup;
 			children = (
+				D43C68972792F9B10045E27F /* odeme-guncelle-module */,
+				D43C68852792EB1A0045E27F /* odeme-ekle-module */,
+				D43C68702792E29C0045E27F /* odeme-module */,
+				D4F0F09127918F690084E64F /* ayarlar-module */,
+				D4F0F0A42792270F0084E64F /* adres-guncelle-module */,
+				D4F0F08D2791851B0084E64F /* adres-ekle-module */,
+				D4F0F0982791E1860084E64F /* adreslerim-module */,
 				D46D192A278B975B008986BD /* helpers */,
+				D4F0F07B2791572D0084E64F /* register-module */,
+				D4F0F07A279157250084E64F /* login-module */,
 				D487AAC8278DEEF400FAADDA /* siparis-module */,
 				D487AAC4278DE3EB00FAADDA /* profile-module */,
 				D46D1917278B547F008986BD /* sepetim-module */,
@@ -206,8 +564,8 @@
 				D44CA37B278D04A900CDBDC5 /* FMDB.h */,
 				D44CA384278D04AA00CDBDC5 /* FMResultSet.h */,
 				D44CA382278D04AA00CDBDC5 /* FMResultSet.m */,
-				D44CA377278D047E00CDBDC5 /* yemekler.sqlite */,
 				D44CA379278D04A800CDBDC5 /* LezzetDuragi-Bridging-Header.h */,
+				D43C687B2792E6570045E27F /* yemekler.sqlite */,
 			);
 			path = LezzetDuragi;
 			sourceTree = "<group>";
@@ -234,6 +592,9 @@
 				D46D18F3278AEFF9008986BD /* SepetYemeklerCevap.swift */,
 				D44CA371278C586500CDBDC5 /* OnboaringSlide.swift */,
 				D44CA38C278D077100CDBDC5 /* YemeklerBegeni.swift */,
+				D4F0F08527915CF00084E64F /* Kisi.swift */,
+				D4F0F08727915EBF0084E64F /* Adres.swift */,
+				D4F0F08927915F610084E64F /* Kart.swift */,
 			);
 			path = entitiy;
 			sourceTree = "<group>";
@@ -484,6 +845,133 @@
 			path = protocol;
 			sourceTree = "<group>";
 		};
+		D4F0F07A279157250084E64F /* login-module */ = {
+			isa = PBXGroup;
+			children = (
+				D43C68A727930C770045E27F /* api */,
+				D4F0F07E279157460084E64F /* view */,
+			);
+			path = "login-module";
+			sourceTree = "<group>";
+		};
+		D4F0F07B2791572D0084E64F /* register-module */ = {
+			isa = PBXGroup;
+			children = (
+				D4F0F081279157560084E64F /* view */,
+			);
+			path = "register-module";
+			sourceTree = "<group>";
+		};
+		D4F0F07E279157460084E64F /* view */ = {
+			isa = PBXGroup;
+			children = (
+				D4F0F07F279157530084E64F /* LoginViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		D4F0F081279157560084E64F /* view */ = {
+			isa = PBXGroup;
+			children = (
+				D4F0F0832791576E0084E64F /* RegisterViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		D4F0F08D2791851B0084E64F /* adres-ekle-module */ = {
+			isa = PBXGroup;
+			children = (
+				D43C685B2792D83B0045E27F /* presenter */,
+				D43C685A2792D8300045E27F /* interactor */,
+				D43C68592792D82A0045E27F /* router */,
+				D43C68582792D81F0045E27F /* protocols */,
+				D4F0F08E2791854C0084E64F /* view */,
+			);
+			path = "adres-ekle-module";
+			sourceTree = "<group>";
+		};
+		D4F0F08E2791854C0084E64F /* view */ = {
+			isa = PBXGroup;
+			children = (
+				D4F0F08F2791855F0084E64F /* AdresEkleViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		D4F0F09127918F690084E64F /* ayarlar-module */ = {
+			isa = PBXGroup;
+			children = (
+				D4F0F095279192C50084E64F /* cell */,
+				D4F0F09227918F750084E64F /* view */,
+			);
+			path = "ayarlar-module";
+			sourceTree = "<group>";
+		};
+		D4F0F09227918F750084E64F /* view */ = {
+			isa = PBXGroup;
+			children = (
+				D4F0F09327918F800084E64F /* AyarlarViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		D4F0F095279192C50084E64F /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				D4F0F096279192E60084E64F /* AyarlarCell.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		D4F0F0982791E1860084E64F /* adreslerim-module */ = {
+			isa = PBXGroup;
+			children = (
+				D43C684E2792D0720045E27F /* presenter */,
+				D43C684D2792D0670045E27F /* interactor */,
+				D43C684C2792D05A0045E27F /* router */,
+				D43C684B2792D0440045E27F /* protocols */,
+				D4F0F09D2791E40F0084E64F /* cell */,
+				D4F0F0992791E1980084E64F /* view */,
+			);
+			path = "adreslerim-module";
+			sourceTree = "<group>";
+		};
+		D4F0F0992791E1980084E64F /* view */ = {
+			isa = PBXGroup;
+			children = (
+				D4F0F09A2791E1B30084E64F /* AdreslerimViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		D4F0F09D2791E40F0084E64F /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				D4F0F09E2791E4280084E64F /* AdreslerimCell.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		D4F0F0A42792270F0084E64F /* adres-guncelle-module */ = {
+			isa = PBXGroup;
+			children = (
+				D43C68672792DBF50045E27F /* presenter */,
+				D43C68662792DBEC0045E27F /* interactor */,
+				D43C68652792DBE50045E27F /* router */,
+				D43C68642792DBDE0045E27F /* protocols */,
+				D4F0F0A5279227190084E64F /* view */,
+			);
+			path = "adres-guncelle-module";
+			sourceTree = "<group>";
+		};
+		D4F0F0A5279227190084E64F /* view */ = {
+			isa = PBXGroup;
+			children = (
+				D4F0F0A6279227360084E64F /* AdresGuncelleViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -552,7 +1040,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D44CA36C278C545C00CDBDC5 /* appIcon.png in Resources */,
-				D44CA378278D047E00CDBDC5 /* yemekler.sqlite in Resources */,
+				D43C687C2792E6570045E27F /* yemekler.sqlite in Resources */,
 				D46D18DA278A68C8008986BD /* LaunchScreen.storyboard in Resources */,
 				D46D18D7278A68C8008986BD /* Assets.xcassets in Resources */,
 				D46D18D5278A68C4008986BD /* Main.storyboard in Resources */,
@@ -566,44 +1054,84 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D43C68A42792FA330045E27F /* OdemeGuncelleInteractor.swift in Sources */,
 				D46D1906278B0BAD008986BD /* AnasayfaRouter.swift in Sources */,
+				D4F0F09427918F800084E64F /* AyarlarViewController.swift in Sources */,
+				D43C687E2792E6D70045E27F /* OdemeProtocols.swift in Sources */,
 				D46D1923278B5534008986BD /* SepetimProtocols.swift in Sources */,
+				D43C68782792E3450045E27F /* OdemeViewController.swift in Sources */,
+				D43C68822792E79B0045E27F /* OdemeInteractor.swift in Sources */,
+				D43C68502792D08E0045E27F /* AdreslerimProtocols.swift in Sources */,
+				D43C68572792D0C00045E27F /* AdreslerimPresenter.swift in Sources */,
+				D4F0F080279157530084E64F /* LoginViewController.swift in Sources */,
 				D46D1927278B554C008986BD /* SepetimInteractor.swift in Sources */,
+				D4F0F09F2791E4280084E64F /* AdreslerimCell.swift in Sources */,
+				D43C68902792F1A80045E27F /* OdemeEkleProtocols.swift in Sources */,
 				D46D18EE278AEE24008986BD /* Yemekler.swift in Sources */,
+				D4F0F08827915EBF0084E64F /* Adres.swift in Sources */,
 				D46D1914278B4293008986BD /* DetayInteractor.swift in Sources */,
 				D44CA388278D04AA00CDBDC5 /* FMDatabaseAdditions.m in Sources */,
+				D43C68552792D0B10045E27F /* AdreslerimInteractor.swift in Sources */,
+				D43C686F2792DC420045E27F /* AdresGuncellePresenter.swift in Sources */,
+				D43C68942792F24D0045E27F /* OdemeEkleInteractor.swift in Sources */,
 				D44CA389278D04AA00CDBDC5 /* FMResultSet.m in Sources */,
 				D44CA387278D04AA00CDBDC5 /* FMDatabaseQueue.m in Sources */,
+				D4F0F08A27915F610084E64F /* Kart.swift in Sources */,
+				D4F0F0842791576E0084E64F /* RegisterViewController.swift in Sources */,
+				D43C68A62792FA3E0045E27F /* OdemeGuncellePresenter.swift in Sources */,
+				D4F0F0902791855F0084E64F /* AdresEkleViewController.swift in Sources */,
 				D487AAD4278DF8BE00FAADDA /* ProfilPresenter.swift in Sources */,
 				D487AADA278DF8DC00FAADDA /* ProfilProtocols.swift in Sources */,
+				D4F0F08627915CF00084E64F /* Kisi.swift in Sources */,
 				D44CA38D278D077100CDBDC5 /* YemeklerBegeni.swift in Sources */,
 				D487AAD8278DF8D300FAADDA /* ProfilRouter.swift in Sources */,
 				D487AAD6278DF8C700FAADDA /* ProfilInteractor.swift in Sources */,
 				D44CA372278C586500CDBDC5 /* OnboaringSlide.swift in Sources */,
+				D43C68632792DAC00045E27F /* AdresEkleRouter.swift in Sources */,
 				D46D1900278B09AF008986BD /* AnasayfaProtocols.swift in Sources */,
+				D43C688A2792ED960045E27F /* OdemeEkleViewController.swift in Sources */,
+				D4F0F0A7279227360084E64F /* AdresGuncelleViewController.swift in Sources */,
 				D46D1929278B5558008986BD /* SepetimPresenter.swift in Sources */,
 				D44CA386278D04AA00CDBDC5 /* FMDatabase.m in Sources */,
 				D46D191F278B54C4008986BD /* SepetimViewController.swift in Sources */,
 				D46D1921278B54E5008986BD /* SepetimCell.swift in Sources */,
 				D46D18F4278AEFF9008986BD /* SepetYemeklerCevap.swift in Sources */,
 				D46D18CE278A68C4008986BD /* AppDelegate.swift in Sources */,
+				D43C685F2792DA130045E27F /* AdresEkleInteractor.swift in Sources */,
 				D46D1910278B3876008986BD /* DetayProtocols.swift in Sources */,
 				D487AAC7278DEA1500FAADDA /* ProfilViewController.swift in Sources */,
+				D43C68692792DC230045E27F /* AdresGuncelleProtocols.swift in Sources */,
 				D44CA36F278C553C00CDBDC5 /* OnboardingViewController.swift in Sources */,
 				D46D18EB278AE8C6008986BD /* YemekCell.swift in Sources */,
+				D43C687A2792E3C30045E27F /* OdemeCell.swift in Sources */,
+				D43C68A22792FA280045E27F /* OdemeGuncelleRouter.swift in Sources */,
+				D43C686D2792DC390045E27F /* AdresGuncelleInteractor.swift in Sources */,
 				D46D18E9278AE86B008986BD /* AnasayfaViewController.swift in Sources */,
+				D43C68842792E8BA0045E27F /* OdemeRouter.swift in Sources */,
+				D43C68532792D0A30045E27F /* AdreslerimRouter.swift in Sources */,
+				D4F0F097279192E60084E64F /* AyarlarCell.swift in Sources */,
 				D46D18D0278A68C4008986BD /* SceneDelegate.swift in Sources */,
 				D46D18F2278AEFD2008986BD /* YemeklerCevap.swift in Sources */,
+				D43C686B2792DC2D0045E27F /* AdresGuncelleRouter.swift in Sources */,
 				D46D1925278B5541008986BD /* SepetimRouter.swift in Sources */,
 				D46D1904278B0B59008986BD /* AnasayfaPresenter.swift in Sources */,
 				D46D1912278B425F008986BD /* DetayRouter.swift in Sources */,
+				D43C68962792F25A0045E27F /* OdemeEklePresenter.swift in Sources */,
+				D43C689E2792F9F60045E27F /* OdemeGuncelleViewController.swift in Sources */,
 				D46D192C278B976C008986BD /* Extensions.swift in Sources */,
+				D43C68922792F2400045E27F /* OdemeEkleRouter.swift in Sources */,
 				D46D1916278B42D7008986BD /* DetayPresenter.swift in Sources */,
+				D43C68612792DA720045E27F /* AdresEklePresenter.swift in Sources */,
+				D43C68802792E7500045E27F /* OdemePresenter.swift in Sources */,
 				D44CA374278CB26600CDBDC5 /* OnboardingCell.swift in Sources */,
+				D4F0F09B2791E1B30084E64F /* AdreslerimViewController.swift in Sources */,
 				D46D190A278B132F008986BD /* DetayViewController.swift in Sources */,
 				D44CA385278D04AA00CDBDC5 /* FMDatabasePool.m in Sources */,
+				D43C68A02792FA100045E27F /* OdemeGuncelleProtocols.swift in Sources */,
 				D46D1902278B0A8B008986BD /* AnasayfaInteractor.swift in Sources */,
+				D4F0F08C2791630A0084E64F /* Kisilerdao.swift in Sources */,
 				D46D18F0278AEF02008986BD /* SepetYemekler.swift in Sources */,
+				D43C685D2792D9600045E27F /* AdresEkleProtocols.swift in Sources */,
 				D487AACB278DEF1300FAADDA /* SiparisDetayViewController.swift in Sources */,
 				D487AACE278DF64600FAADDA /* ProfilCell.swift in Sources */,
 			);

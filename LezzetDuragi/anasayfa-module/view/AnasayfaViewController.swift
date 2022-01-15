@@ -15,26 +15,50 @@ class AnasayfaViewController: UIViewController{
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var kullaniciAdiLabel: UILabel!
+    @IBOutlet weak var adresSecimTextField: UITextField!
     
+    var pickerView = UIPickerView()
+    var selected = UserDefaults.standard.string(forKey: "selected") ?? "Adres Seçiniz"
     var yemeklerListesi = [Yemekler]()
     var arananYemeklerListesi = [Yemekler]()
     var anasayfaPresenterNesnesi:ViewToPresenterAnasayfaProtocol?
+    var adreslerListesi = [String]()
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        adresSecimTextField.delegate = self
+        adresSecimTextField.inputView = pickerView
+        
+        kullaniciAdiLabel.text = "Merhaba \(AppDelegate().getUser()!)"
         configureCollectionViewUI()
         AnasayfaRouter.createModule(ref: self)
     }
-    
+   
     override func viewWillAppear(_ animated: Bool) {
         //sepet sayi
+        adreslerListesi = ["Adres Seçiniz"]
+
         if let tabItems = tabBarController?.tabBar.items {
             let tabItem = tabItems[1]
             DispatchQueue.main.async {
                 tabItem.badgeValue = "\(UserDefaults.standard.integer(forKey: "sepet"))"
             }
         }
+
+        //picker view için veri çekme
+        for adresler in Kisilerdao().adresAl(kisi_id: UserDefaults.standard.integer(forKey: "currentUserId")) {
+            adreslerListesi.append(adresler.adres_baslik ?? "")
+        }
+        adresSecimTextField.text = selected
+        
+        if adreslerListesi.count == 1{
+            UserDefaults.standard.set("Adres Seçiniz", forKey: "selected")
+        }
+        adresSecimTextField.text = UserDefaults.standard.string(forKey: "selected")
         anasayfaPresenterNesnesi?.getir()
     }
 
@@ -66,6 +90,31 @@ class AnasayfaViewController: UIViewController{
         
         collectionView.collectionViewLayout = layout
     }
+}
+
+//MARK: - UIPickerView
+extension AnasayfaViewController: UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return adreslerListesi.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return adreslerListesi[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        UserDefaults.standard.set(adreslerListesi[row], forKey: "selected")
+        adresSecimTextField.text = adreslerListesi[row]
+        
+        self.view.endEditing(true)
+    }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return false
+    }
+    
 }
 
 //MARK: - UICollectionViewDelegate,UICollectionViewDataSource
